@@ -1,7 +1,23 @@
-<html>
-  <div class="col-xs-12 footer">
-    <div class="container-fluid">
-      <h3>footer content</h3>
+<div class="container-fluid">
+  <div class="col-xs-12 footer" ng-controller="FooterCtrl">
+    <div class="row footer-content">
+      <div class="col-xs-offset-4 col-xs-2 socmed">
+        <div ng-repeat="myImage in socmed">
+          <img src="{{getImagePath(myImage)}}" class="pull-right"/>
+        </div>
+      </div>
+      <div class="col-xs-6 contact">
+        <div ng-repeat="contact in contacts">
+          <div class="col-xs-3">
+            <p class="contact-head">
+              {{contact.head}}
+            </p>
+            <p class="contact-info">
+              {{contact.info}}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</html>
+</div>
