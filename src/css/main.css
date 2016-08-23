@@ -1,3 +1,43 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+#navbar-logo {
+}
+
+#navbar-links {
+  text-align: right;
+}
+
+.navbar-content a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-content a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-custom {
+  background-color: #00aeef;
+  height: 50px;
+}
+
+.footer {
+  background-color: #00aeef;
+  height: 125px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
 h1 {
-  font-style: bold
+  padding-top: 50px;
+}
+
+
+#space-test {
+  width: 200px;
 }

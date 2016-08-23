@@ -8,7 +8,10 @@
 <link rel="stylesheet" href="/src/css/main.css">
 <body>
   <div ng-app="leap">
-    <div ng-view></div>
+    <ng-include src="'/src/partials/Nav.html'"></ng-include>
+    <div ng-view>
+    </div>
+    <ng-include src="'/src/partials/Footer.html'"></ng-include>
   </div>
 
   <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
