@@ -1,5 +1,4 @@
 (function () {
   'use strict';
-  angular.module('leap', ['ngRoute']);
-  
+  angular.module('leap', ['ngRoute', 'ui.bootstrap']);
 }());

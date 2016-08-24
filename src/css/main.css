@@ -10,6 +10,10 @@ html {
   min-height: 100%;
 }
 
+body {
+  /*font-family: 'Roboto', sans-serif;*/
+}
+
 #navbar-logo {
   height: 100%;
 }
@@ -22,18 +26,20 @@ html {
   top: 16%;
 }
 
-#navbar-links {
+.navbar-links {
   font-family: 'Roboto', sans-serif;
   text-align: right;
-  font-size: 16px;
+  font-size: 18px;
   height: 100%;
   padding-right: 15px;
 }
 
-#navbar-links a {
+.navbar-link {
   position: relative;
-  top: 25%;
+  top: 27%;
+  margin-left: 10px;
 }
+
 
 .navbar-container {
  height: 50px;
@@ -94,4 +100,23 @@ html {
 
 p {
   margin-bottom: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 157% !important;
+  left: -790% !important;
+  padding: 0 !important;
+  margin: 2px 0 0 !important;
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+.dropdown-menu > li > a:hover {
+  cursor: pointer;
+  background-color: #00aeef !important;
+  color: white;
+}
+
+.dropdown-menu > li:hover {
 }
