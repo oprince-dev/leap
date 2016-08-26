@@ -6,8 +6,9 @@
 </head>
 <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
-<link rel="stylesheet" href="/src/css/main.css">
+<link rel="stylesheet" href="/src/css/styles.css">
 <body>
+  <script type="text/javascript" src="node_modules/angular/angular.js"></script>
   <div ng-app="leap">
     <ng-include src="'/src/partials/Nav.html'"></ng-include>
     <div ng-view>
@@ -15,7 +16,6 @@
     <ng-include src="'/src/partials/Footer.html'"></ng-include>
   </div>
 
-  <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
   <script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>

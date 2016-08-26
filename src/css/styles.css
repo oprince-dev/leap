@@ -1,0 +1,190 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700';
+@font-face {
+  font-family: "SouvenirStd-DemiItalic";
+  src: url(../fonts/SouvenirStd-DemiItalic.otf);
+}
+/* line 4, ../sass/styles.sass */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 7, ../sass/styles.sass */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* line 12, ../sass/styles.sass */
+.navbar-custom {
+  background-color: #00aeef;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+/* line 16, ../sass/styles.sass */
+.navbar-logo {
+  height: 100%;
+  line-height: 50px;
+  transform: translateY(-5px);
+}
+/* line 19, ../sass/styles.sass */
+.navbar-logo a {
+  font-family: "SouvenirStd-DemiItalic";
+  vertical-align: middle;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+/* line 32, ../sass/_base.sass */
+.navbar-logo a:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* line 24, ../sass/styles.sass */
+.navbar-links {
+  height: 100%;
+  line-height: 50px;
+  text-align: right;
+}
+/* line 27, ../sass/styles.sass */
+.navbar-links .navbar-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  margin-right: 15px;
+}
+/* line 32, ../sass/_base.sass */
+.navbar-links .navbar-link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* line 31, ../sass/styles.sass */
+#dropdown-icon {
+  text-decoration: none;
+  color: white;
+}
+/* line 32, ../sass/_base.sass */
+#dropdown-icon:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* line 33, ../sass/styles.sass */
+.dropdown-menu {
+  position: absolute;
+  top: 155% !important;
+  left: -790% !important;
+  padding: 0 !important;
+  margin: 2px 0 0 !important;
+  border: none !important;
+  border-radius: 0px !important;
+}
+/* line 41, ../sass/styles.sass */
+.dropdown-menu li {
+  margin: 0;
+}
+/* line 43, ../sass/styles.sass */
+.dropdown-menu li a:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #00aeef;
+}
+/* line 32, ../sass/_base.sass */
+.dropdown-menu li a:hover:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* line 49, ../sass/styles.sass */
+.footer {
+  background-color: #00aeef;
+  height: 125px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+/* line 55, ../sass/styles.sass */
+.footer .footer-content {
+  margin-top: 15px;
+}
+
+/* line 57, ../sass/styles.sass */
+.contact {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding-left: 0;
+}
+/* line 61, ../sass/styles.sass */
+.contact .contact-head, .contact .contact-info {
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+/* line 63, ../sass/styles.sass */
+.contact .contact-head {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 30px;
+}
+/* line 67, ../sass/styles.sass */
+.contact .contact-info {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* line 70, ../sass/styles.sass */
+.socmed img {
+  height: 24px;
+  margin: 3px;
+}
+
+/* line 76, ../sass/styles.sass */
+.land-page {
+  padding-top: 7%;
+}
+
+/* line 78, ../sass/styles.sass */
+.device-mocks {
+  height: 80vh;
+  padding: 0;
+}
+/* line 81, ../sass/styles.sass */
+.device-mocks img {
+  margin: auto auto;
+  width: 90%;
+  height: auto;
+  vertical-align: middle;
+  float: right;
+}
+
+/* line 87, ../sass/styles.sass */
+.land-content {
+  height: 80vh;
+  padding: 0 50px 0 0;
+}
+/* line 90, ../sass/styles.sass */
+.land-content img {
+  margin: auto 0;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+/* line 95, ../sass/styles.sass */
+.btn-custom {
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: white;
+  background-color: #00aeef;
+  border: none;
+  margin-top: 6%;
+  padding: 10px 25px;
+}
+/* line 32, ../sass/_base.sass */
+.btn-custom:hover {
+  color: white;
+  cursor: pointer;
+}

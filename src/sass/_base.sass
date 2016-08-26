@@ -1,0 +1,38 @@
+// Variables
+
+$PrimaryColor: rgba(0, 174, 239, 1)
+$SecondaryColor: rgba(54, 54, 54, 1)
+$TertiaryColor: rgba(22, 22, 22, 1)
+$LeapColor1: rgba(38, 248, 255, 1)
+$LeapColor2: rgba(69, 255, 134, 1)
+$LeapColor3: rgba(255, 69, 107, 1)
+$LeapColor4: rgba(254, 255, 125, 1)
+$LeapColor5: rgba(125, 153, 255, 1)
+$LeapColor6: rgba(255, 124, 254, 1)
+
+
+//Font Import
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700'
+@font-face
+  font-family: 'SouvenirStd-DemiItalic'
+  src: url(../fonts/SouvenirStd-DemiItalic.otf)
+
+//Fonts
+$Roboto: 'Roboto', sans-serif
+$Souvenir: 'SouvenirStd-DemiItalic'
+
+//Mixins
+=fit-to-nav
+  height: 100%
+  line-height: 50px
+
+=normalize-links
+  text-decoration: none
+  color: white
+  &:hover
+    color: white
+    cursor: pointer
+
+=contact-content
+  margin-bottom: 5px
+  vertical-align: middle

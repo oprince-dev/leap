@@ -1,12 +1,12 @@
 <div class="container-fluid navbar-container">
   <nav class="navbar navbar-static-top navbar-custom row" ng-controller="NavCtrl">
-    <div class="col-xs-2" id="navbar-logo">
+    <div class="col-xs-2 navbar-logo">
       <a href="#/">{{logo}}</a>
     </div>
     <div class="col-xs-offset-6 col-xs-4 navbar-links">
       <a href="#/Auth" class="navbar-link">{{login}}</a>
       <span uib-dropdown on-toggle="toggled(open)" class="navbar-link">
-        <a id="dropdown" uib-dropdown-toggle>
+        <a id="dropdown-icon" uib-dropdown-toggle>
           <span class="glyphicon glyphicon-menu-hamburger"></span>
         </a>
         <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="dropdown">
