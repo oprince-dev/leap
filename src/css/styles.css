@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700';
+@import 'https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,500,700';
 @font-face {
   font-family: "SouvenirStd-DemiItalic";
   src: url(../fonts/SouvenirStd-DemiItalic.otf);
@@ -7,184 +7,332 @@
 html {
   position: relative;
   min-height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
 }
 
-/* line 7, ../sass/styles.sass */
+/* line 9, ../sass/styles.sass */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "Roboto", sans-serif;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 12, ../sass/styles.sass */
-.navbar-custom {
+/* line 19, ../sass/styles.sass */
+.navbar {
   background-color: #00aeef;
   height: 50px;
-  margin-bottom: 0;
-}
-
-/* line 16, ../sass/styles.sass */
-.navbar-logo {
-  height: 100%;
-  line-height: 50px;
-  transform: translateY(-5px);
-}
-/* line 19, ../sass/styles.sass */
-.navbar-logo a {
-  font-family: "SouvenirStd-DemiItalic";
-  vertical-align: middle;
-  font-size: 30px;
-  text-decoration: none;
-  color: white;
-}
-/* line 32, ../sass/_base.sass */
-.navbar-logo a:hover {
-  color: white;
-  cursor: pointer;
-}
-
-/* line 24, ../sass/styles.sass */
-.navbar-links {
-  height: 100%;
-  line-height: 50px;
-  text-align: right;
-}
-/* line 27, ../sass/styles.sass */
-.navbar-links .navbar-link {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  margin-right: 15px;
-}
-/* line 32, ../sass/_base.sass */
-.navbar-links .navbar-link:hover {
-  color: white;
-  cursor: pointer;
-}
-
-/* line 31, ../sass/styles.sass */
-#dropdown-icon {
-  text-decoration: none;
-  color: white;
-}
-/* line 32, ../sass/_base.sass */
-#dropdown-icon:hover {
-  color: white;
-  cursor: pointer;
-}
-
-/* line 33, ../sass/styles.sass */
-.dropdown-menu {
-  position: absolute;
-  top: 155% !important;
-  left: -790% !important;
-  padding: 0 !important;
-  margin: 2px 0 0 !important;
-  border: none !important;
-  border-radius: 0px !important;
-}
-/* line 41, ../sass/styles.sass */
-.dropdown-menu li {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   margin: 0;
+  position: relative;
+  z-index: 3;
 }
-/* line 43, ../sass/styles.sass */
-.dropdown-menu li a:hover {
-  text-decoration: none;
-  color: white;
-  background-color: #00aeef;
+
+/* line 29, ../sass/styles.sass */
+.navbar-content {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-/* line 32, ../sass/_base.sass */
-.dropdown-menu li a:hover:hover {
-  color: white;
+
+/* line 34, ../sass/styles.sass */
+.navbar-logo {
+  flex-grow: 1;
+  vertical-align: middle;
+  overflow: hidden;
+  text-indent: -9000px;
+  display: block;
+  width: auto;
+  max-width: 100px;
+  max-height: 30px;
+  margin: 10px 0;
+  background-image: url(../img/leap.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+/* line 47, ../sass/styles.sass */
+.navbar-logo:hover {
   cursor: pointer;
 }
 
 /* line 49, ../sass/styles.sass */
-.footer {
-  background-color: #00aeef;
-  height: 125px;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-}
-/* line 55, ../sass/styles.sass */
-.footer .footer-content {
-  margin-top: 15px;
+.navbar-links {
+  text-align: right;
+  display: flex;
+  margin-right: 20px;
 }
 
-/* line 57, ../sass/styles.sass */
-.contact {
-  font-family: "Roboto", sans-serif;
-  color: white;
-  padding-left: 0;
+/* line 53, ../sass/styles.sass */
+.navbar-links > ul {
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
 }
-/* line 61, ../sass/styles.sass */
-.contact .contact-head, .contact .contact-info {
-  margin-bottom: 5px;
+
+/* line 58, ../sass/styles.sass */
+.navbar-links > ul > li {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  display: inline;
   vertical-align: middle;
+  margin-right: 20px;
+}
+/* line 34, ../sass/_base.sass */
+.navbar-links > ul > li:hover {
+  color: white;
+  cursor: pointer;
 }
 /* line 63, ../sass/styles.sass */
-.contact .contact-head {
-  font-size: 25px;
-  font-weight: 500;
-  line-height: 30px;
+.navbar-links > ul > li.is-active {
+  color: pink;
 }
-/* line 67, ../sass/styles.sass */
-.contact .contact-info {
+
+/* line 65, ../sass/styles.sass */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: -300px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 0 !important;
+}
+
+/* line 73, ../sass/styles.sass */
+.dropdown > li {
+  background-color: #161616;
+  text-decoration: none;
+  color: white;
   font-size: 18px;
-  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  display: none !important;
+  padding: 10px 20px 10px 50px;
+  animation: dropdown 500ms cubic-bezier(0, 0, 0.3, 1) forwards;
+}
+/* line 34, ../sass/_base.sass */
+.dropdown > li:hover {
+  color: white;
+  cursor: pointer;
+}
+/* line 79, ../sass/styles.sass */
+.dropdown > li:hover {
+  background-color: #00aeef;
 }
 
-/* line 70, ../sass/styles.sass */
-.socmed img {
-  height: 24px;
-  margin: 3px;
-}
-
-/* line 76, ../sass/styles.sass */
-.land-page {
-  padding-top: 7%;
-}
-
-/* line 78, ../sass/styles.sass */
-.device-mocks {
-  height: 80vh;
-  padding: 0;
-}
 /* line 81, ../sass/styles.sass */
-.device-mocks img {
-  margin: auto auto;
-  width: 90%;
-  height: auto;
-  vertical-align: middle;
-  float: right;
+.isDown > li {
+  display: block !important;
 }
 
-/* line 87, ../sass/styles.sass */
-.land-content {
-  height: 80vh;
-  padding: 0 50px 0 0;
-}
-/* line 90, ../sass/styles.sass */
-.land-content img {
-  margin: auto 0;
+/* line 86, ../sass/styles.sass */
+.footer {
+  background-color: #00aeef;
+  height: 135px;
   width: 100%;
-  height: auto;
-  vertical-align: top;
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  z-index: 3;
+  margin-top: 10px;
 }
 
 /* line 95, ../sass/styles.sass */
-.btn-custom {
+.footer-content {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+/* line 100, ../sass/styles.sass */
+.contact {
+  display: flex;
+  flex-direction: row;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding-left: 0;
+  margin-top: 30px;
+  margin-right: 300px;
+}
+
+/* line 108, ../sass/styles.sass */
+.contact-head {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 0 0 10px;
+}
+
+/* line 113, ../sass/styles.sass */
+.contact-info {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* line 117, ../sass/styles.sass */
+.contact-col {
+  max-width: 200px;
+  flex-wrap: wrap;
+  padding: 0 40px 0 0;
+}
+
+/* line 121, ../sass/styles.sass */
+.socmed {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
+/* line 126, ../sass/styles.sass */
+.socmed-img {
+  height: 24px;
+  margin: 4px;
+}
+/* line 129, ../sass/styles.sass */
+.socmed-img:hover {
+  cursor: pointer;
+}
+
+/* line 133, ../sass/styles.sass */
+.land-page {
+  width: 100%;
+  min-height: calc(100vh - 299px);
+  margin-top: 100px;
+  background-color: white;
+  display: inline-block;
+}
+
+/* line 139, ../sass/styles.sass */
+.device-mocks {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 20%;
+}
+
+/* line 144, ../sass/styles.sass */
+#phonemock {
+  background-image: url("../img/phone-mock.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  animation: LandSlide 1800ms cubic-bezier(0, 0, 0.1, 1) forwards;
+  animation-delay: 300ms;
+  opacity: 0;
+  height: 550px;
+  width: 175px;
+  margin-left: 30px;
+  position: absolute;
+}
+
+/* line 156, ../sass/styles.sass */
+#laptopmock {
+  background-image: url("../img/laptop-mock.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center right;
+  position: absolute;
+  margin: 0;
+  opacity: 0;
+  animation: LandSlide 1800ms cubic-bezier(0, 0, 0.3, 1) forwards;
+  height: 550px;
+  width: 1100px;
+}
+
+/* line 167, ../sass/styles.sass */
+.land-content {
+  position: relative;
+  z-index: 1;
+  float: right;
+  width: 30%;
+  margin-right: 30px;
+  opacity: 0;
+  animation: FadeIn 1000ms ease-in forwards;
+  animation-delay: 800ms;
+}
+
+/* line 176, ../sass/styles.sass */
+#phrase {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* line 181, ../sass/styles.sass */
+.signUpCTA {
   text-decoration: none;
   color: white;
-  font-family: "Roboto", sans-serif;
   font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  text-align: center;
   color: white;
   background-color: #00aeef;
   border: none;
-  margin-top: 6%;
+  border-radius: 5px;
+  width: 75px;
+  display: block;
+  margin: auto;
+  margin-bottom: 100px;
   padding: 10px 25px;
 }
-/* line 32, ../sass/_base.sass */
-.btn-custom:hover {
+/* line 34, ../sass/_base.sass */
+.signUpCTA:hover {
   color: white;
   cursor: pointer;
+}
+
+/* line 195, ../sass/styles.sass */
+.badges {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+/* line 199, ../sass/styles.sass */
+.badges > img {
+  height: 40px;
+  padding: 0 10px !important;
+  margin: 0 !important;
+}
+
+@keyframes LandSlide {
+  0% {
+    transform: translate3d(-2000px, 0px, 0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes dropdown {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-300px, 0, 0);
+  }
 }

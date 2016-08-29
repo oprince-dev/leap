@@ -1,15 +1,16 @@
-<div class="container-fluid land-page">
-  <div class="row">
-    <div class="col-xs-8 device-mocks">
-      <img src="{{mocks}}" class="" alt="Leap design"/>
+<div class="land-page">
+  <div class="device-mocks">
+    <div id="phonemock"></div>
+    <div id="laptopmock"></div>
+  </div>
+  <div class="land-content">
+    <img src="{{phrase}}" id="phrase" alt="Manage your time with Leap"/>
+    <div class="signUpCTA" ng-click="toAuth()">
+      {{sign}}
     </div>
-    <div class="col-xs-4 land-content">
-      <img src="{{phrase}}" class="" alt="Manage your time with Leap"/>
-      <div class="row pink">
-        <button class="btn btn-custom center-block roboto">
-          Sign Up
-        </button>
-      </div>
+    <div class="badges">
+      <img src="{{googleplay}}" alt="Google Play Leap Download">
+      <img src="{{appstore}}" alt="App Store Leap Download">
     </div>
   </div>
 </div>

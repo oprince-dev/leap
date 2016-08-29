@@ -4,100 +4,218 @@
 html
   position: relative
   min-height: 100%
+  min-width: 100%
+  overflow-x: hidden
 body
+  display: flex
+  flex-direction: column
+  min-height: 100%
   font-family: $Roboto
+  width: 100%
+  -webkit-font-smoothing: antialiased
 
 
-//Navbar Styling
-.navbar-custom
+//////////////////////////////////////////////////////////////////Navbar Styling
+.navbar
   background-color: $PrimaryColor
   height: 50px
-  margin-bottom: 0
+  width: 100%
+  position: fixed
+  top: 0
+  left: 0
+  margin: 0
+  position: relative
+  z-index: 3
+.navbar-content
+  height: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
 .navbar-logo
-  +fit-to-nav
-  transform: translateY(-5px)
-  a
-    font-family: $Souvenir
-    vertical-align: middle
-    font-size: 30px
-    +normalize-links
+  flex-grow: 1
+  vertical-align: middle
+  +hide-text
+  width: auto
+  max-width: 100px
+  max-height: 30px
+  margin: 10px 0
+  background:
+    image: url(../img/leap.svg)
+    repeat: no-repeat
+    position: center center
+    size: contain
+  &:hover
+    cursor: pointer
 .navbar-links
-  +fit-to-nav
   text-align: right
-  .navbar-link
-    +normalize-links
-    font-size: 18px
-    margin-right: 15px
-#dropdown-icon
+  display: flex
+  margin-right: 20px
+.navbar-links > ul
+  margin: 0
+  height: 50px
+  line-height: 50px
+  // max-height: 50px
+.navbar-links > ul > li
   +normalize-links
-.dropdown-menu
+  display: inline
+  vertical-align: middle
+  margin-right: 20px
+  &.is-active
+    color: pink
+.dropdown
   position: absolute
-  top: 155% !important
-  left: -790% !important
+  top: 50px
+  right: -300px
+  display: flex
+  flex-direction: column
+  height: auto
   padding: 0 !important
-  margin: 2px 0 0 !important
-  border: none !important
-  border-radius: 0px !important
-  li
-    margin: 0
-    a:hover
-      +normalize-links
-      background-color: $PrimaryColor
+.dropdown > li
+  background-color: $TertiaryColor
+  +normalize-links
+  display: none !important
+  padding: 10px 20px 10px 50px
+  animation: dropdown 500ms cubic-bezier(0, 0, 0.3, 1) forwards
+  &:hover
+    background-color: $PrimaryColor
+.isDown > li
+  display: block !important
 
 
-//Footer Styling
+//////////////////////////////////////////////////////////////////Footer Styling
 .footer
   background-color: $PrimaryColor
-  height: 125px
-  position: absolute
+  height: 135px
+  width: 100%
+  position: relative
   bottom: 0px
   left: 0px
-  .footer-content
-    margin-top: 15px
+  z-index: 3
+  margin-top: 10px
+.footer-content
+  height: 100%
+  display: flex
+  justify-content: flex-end
+  flex-direction: row
 .contact
+  display: flex
+  flex-direction: row
   font-family: $Roboto
   color: white
   padding-left: 0
-  .contact-head, .contact-info
-    +contact-content
-  .contact-head
-    font-size: 25px
-    font-weight: 500
-    line-height: 30px
-  .contact-info
-    font-size: 18px
-    font-weight: 300
-.socmed img
+  margin-top: 30px
+  margin-right: 300px
+.contact-head
+  font-size: 25px
+  font-weight: 500
+  line-height: 30px
+  margin: 0 0 10px
+.contact-info
+  font-size: 18px
+  font-weight: 300
+  margin: 0
+.contact-col
+  max-width: 200px
+  flex-wrap: wrap
+  padding: 0 40px 0 0
+.socmed
+  display: flex
+  flex-direction: row
+  margin-top: 30px
+  margin-right: 30px
+.socmed-img
   height: 24px
-  margin: 3px
+  margin: 4px
+  &:hover
+    cursor: pointer
 
-
-//Land Page Styling
+//////////////////////////////////////////////////////////////////Land Page Styling
 .land-page
-  padding-top: 7%
+  width: 100%
+  min-height: calc(100vh - 299px)
+  margin-top: 100px
+  background-color: white
+  display: inline-block
 .device-mocks
-  height: 80vh
-  padding: 0
-  img
-    margin: auto auto
-    width: 90%
-    height: auto
-    vertical-align: middle
-    float: right
+  position: absolute
+  top: 150px
+  left: 0
+  width: 20%
+#phonemock
+  background-image: url('../img/phone-mock.png')
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: bottom left
+  animation: LandSlide 1800ms cubic-bezier(0, 0, 0.1, 1) forwards
+  animation-delay: 300ms
+  opacity: 0
+  height: 550px
+  width: 175px
+  margin-left: 30px
+  position: absolute
+#laptopmock
+  background-image: url('../img/laptop-mock.png')
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center right
+  position: absolute
+  margin: 0
+  opacity: 0
+  animation: LandSlide 1800ms cubic-bezier(0, 0, 0.3, 1) forwards
+  height: 550px
+  width: 1100px
 .land-content
-  height: 80vh
-  padding: 0 50px 0 0
-  img
-    margin: auto 0
-    width: 100%
-    height: auto
-    vertical-align: top
-.btn-custom
+  position: relative
+  z-index: 1
+  float: right
+  width: 30%
+  margin-right: 30px
+  opacity: 0
+  animation: FadeIn 1000ms ease-in forwards
+  animation-delay: 800ms
+#phrase
+  position: relative
+  width: 100%
+  margin-bottom: 40px
+  width: 100%
+.signUpCTA
   +normalize-links
   font-family: $Roboto
-  font-size: 18px
+  font-size: 20px
+  text-align: center
   color: white
   background-color:  $PrimaryColor
   border: none
-  margin-top: 6%
+  border-radius: 5px
+  width: 75px
+  display: block
+  margin: auto
+  margin-bottom: 100px
   padding: 10px 25px
+.badges
+  display: flex
+  justify-content: center
+  margin: auto
+.badges > img
+  height: 40px
+  padding: 0 10px !important
+  margin: 0 !important
+
+//////////////////////////////////////////////////////////////////Animations
+@keyframes LandSlide
+  0%
+    transform: translate3d(-2000px, 0px, 0px)
+    opacity: 1
+  100%
+    transform: translate3d(0px, 0px, 0px)
+    opacity: 1
+@keyframes FadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes dropdown
+  0%
+    transform: translate3d(0, 0, 0)
+  100%
+    transform: translate3d(-300px, 0, 0)

@@ -1,20 +1,21 @@
-<div class="container-fluid navbar-container">
-  <nav class="navbar navbar-static-top navbar-custom row" ng-controller="NavCtrl">
-    <div class="col-xs-2 navbar-logo">
-      <a href="#/">{{logo}}</a>
+<nav class="navbar" ng-controller="NavCtrl">
+  <div class="navbar-content">
+    <h1 class="navbar-logo" ng-click="navigate('Home')">{{logo}}</h1>
+    <div class="navbar-links">
+      <ul>
+        <li ng-click="navigate('Auth')">
+          {{login}}
+        </li>
+        <li>
+          <i class="fa fa-bars" aria-hidden="true" ng-click="dropdown()">
+            <ul class="dropdown" ng-class="{'isDown': isDown}">
+              <li ng-repeat="choice in dropdownItems" ng-click="navigate(choice.route)">
+                {{choice.name}}
+              </li>
+            </ul>
+          </i>
+        </li>
+      </ul>
     </div>
-    <div class="col-xs-offset-6 col-xs-4 navbar-links">
-      <a href="#/Auth" class="navbar-link">{{login}}</a>
-      <span uib-dropdown on-toggle="toggled(open)" class="navbar-link">
-        <a id="dropdown-icon" uib-dropdown-toggle>
-          <span class="glyphicon glyphicon-menu-hamburger"></span>
-        </a>
-        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="dropdown">
-          <li ng-repeat="choice in choices">
-            <a ng-click="navigate(choice.route)">{{choice.name}}</a>
-          </li>
-        </ul>
-      </span>
-    </div>
-  </nav>
-</div>
+  </div>
+</nav>

@@ -1,22 +1,18 @@
-<div class="container-fluid">
-  <div class="col-xs-12 footer" ng-controller="FooterCtrl">
-    <div class="row footer-content">
-      <div class="col-xs-offset-4 col-xs-2 socmed">
-        <div ng-repeat="img in socmed">
-          <img src="{{getImagePath(img)}}" class="pull-right" alt="Social media"/>
-        </div>
+<div class="footer" ng-controller="FooterCtrl">
+  <div class="footer-content">
+    <div class="socmed">
+      <div ng-repeat="img in socmed">
+        <img src="{{getImagePath(img)}}" class="socmed-img" alt="Social media"/>
       </div>
-      <div class="col-xs-6 contact">
-        <div ng-repeat="contact in contacts">
-          <div class="col-xs-3">
-            <p class="contact-head">
-              {{contact.head}}
-            </p>
-            <p class="contact-info">
-              {{contact.info}}
-            </p>
-          </div>
-        </div>
+    </div>
+    <div class="contact">
+      <div class="contact-col" ng-repeat="contact in contacts">
+        <p class="contact-head">
+          {{contact.head}}
+        </p>
+        <p class="contact-info">
+          {{contact.info}}
+        </p>
       </div>
     </div>
   </div>

@@ -6,7 +6,11 @@
       $scope.toAuth = function() {
         $location.path('Auth');
       };
-      $scope.mocks = '/src/img/device-mocks.png';
+      $scope.phonemock = '/src/img/phone-mock.png';
+      $scope.laptopmock = '/src/img/laptop-mock.png';
       $scope.phrase = '/src/img/phrase.png';
+      $scope.appstore = '/src/img/appstore.svg';
+      $scope.googleplay = '/src/img/googleplay.svg';
+      $scope.sign = "Sign Up";
     });
 }());

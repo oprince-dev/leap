@@ -12,7 +12,7 @@ $LeapColor6: rgba(255, 124, 254, 1)
 
 
 //Font Import
-@import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700'
+@import 'https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,500,700'
 @font-face
   font-family: 'SouvenirStd-DemiItalic'
   src: url(../fonts/SouvenirStd-DemiItalic.otf)
@@ -29,10 +29,15 @@ $Souvenir: 'SouvenirStd-DemiItalic'
 =normalize-links
   text-decoration: none
   color: white
+  font-size: 18px
+  font-family: $Roboto
   &:hover
     color: white
     cursor: pointer
 
-=contact-content
-  margin-bottom: 5px
-  vertical-align: middle
+$starting-mock-x: -2000px
+
+=hide-text
+  overflow: hidden
+  text-indent: -9000px
+  display: block

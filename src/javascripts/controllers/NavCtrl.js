@@ -2,23 +2,21 @@
   'use strict';
 
   angular.module('leap')
-    .controller('NavCtrl', function($scope, $log, $location) {
+    .controller('NavCtrl', function($scope, $location) {
       $scope.logo = "leap";
       $scope.login = "Login";
-      $scope.choices = [
+      $scope.dropdown = function() {
+        $scope.isDown = !$scope.isDown;
+      };
+      $scope.dropdownItems = [
         {route: 'Settings', name: 'Settings'},
         {route: 'Auth', name: 'Auth'}
       ];
-      $scope.status = {
-        isopen: false
-      };
-      $scope.toggleDropdown = function ($event) {
-        $event.preventDefault();
-        $event.stopPropogation();
-        $scope.status.isopen = !$scope.status.isopen;
-      };
       $scope.navigate = function(route) {
-        if (route == 'Auth') {
+        if (route == 'Home') {
+          $location.path('/');
+        }
+        else if (route == 'Auth') {
           $location.path('Auth');
         }
         else if (route == 'Settings') {
