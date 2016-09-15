@@ -201,6 +201,31 @@ body
   padding: 0 10px !important
   margin: 0 !important
 
+//////////////////////////////////////////////////////////////////Auth Page Styling
+.auth-page
+  width: 100%
+  min-height: calc(100vh - 299px)
+  margin-top: 100px
+  background-color: white
+  display: flex
+  flex-direction: column
+  .auth
+    width: 500px
+    margin: 0 auto
+    text-align: center
+    h1
+      display: block
+    input
+      display: flex
+      flex-direction: column
+      margin: 10px auto
+      width: 60%
+      border-radius: 1px
+      border: 0
+      height: 20px
+      background-color: $SecondaryColor
+      color: white
+      padding: 10px
 //////////////////////////////////////////////////////////////////Animations
 @keyframes LandSlide
   0%
@@ -219,3 +244,11 @@ body
     transform: translate3d(0, 0, 0)
   100%
     transform: translate3d(-300px, 0, 0)
+
+
+@media (max-width : 1525px)
+  .land-content
+    display: block
+    position: relative
+  #laptopmock
+    width: 750px
