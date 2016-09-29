@@ -3,11 +3,17 @@
 
   angular.module('leap')
     .controller('HomeCtrl', function($scope, $location) {
-      $scope.Tasks = function(page) {
-        var route = tasks;
+      $scope.showNav = true;
+      $scope.navigate = function(page) {
+        if (page == 'tasks') {
+          $location.path('home/tasks');
+        } else if (page == 'stats') {
+          $location.path('home/stats');
+        } else if (page == 'calendar') {
+          $location.path('home/calendar');
+        } else if (page == 'notifications') {
+          $location.path('home/notifications');
+        }
       };
-      $scope.Stats = function() {};
-      $scope.Calendar = function() {};
-      $scope.Notifications = function() {};
     });
 }());

@@ -1,0 +1,30 @@
+<div class="sidenav" ng-controller="SideNavCtrl">
+  <div class="userInfo row">
+    <ul>
+      <li ng-click="navigate('home')">
+        <img src="/src/img/userIcons/profpic.png" alt="">
+        <h4>username1</h4>
+      </li>
+    </ul>
+  </div>
+  <div class="userLinks">
+    <ul>
+      <li ng-click="navigate('tasks')">
+        <img src="/src/img/userIcons/tasks.png" alt="">
+        <h4>Tasks</h4>
+      </li>
+      <li ng-click="navigate('stats')">
+        <img src="/src/img/userIcons/graph.png" alt="">
+        <h4>Stats</h4>
+      </li>
+      <li ng-click="navigate('calendar')">
+        <img src="/src/img/userIcons/calendar.png" alt="">
+        <h4>Calendar</h4>
+      </li>
+      <li ng-click="navigate('notifications')">
+        <img src="/src/img/userIcons/bell.png" alt="">
+        <h4>Notifications</h4>
+      </li>
+    </ul>
+  </div>
+</div>

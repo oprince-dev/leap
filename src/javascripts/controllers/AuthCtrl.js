@@ -6,6 +6,8 @@
       $scope.toHome = function() {
         $location.path('home');
       };
+      $scope.showNav = true;
+      $scope.showFooter = true;
       $scope.create = "Create";
     });
 }());

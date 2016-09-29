@@ -374,7 +374,6 @@ html, body, .app {
 }
 /* line 251, ../sass/styles.sass */
 .home-page .sidenav {
-  animation: FadeIn 500ms ease;
   float: left;
   margin: 0 !important;
   min-width: 200px;
@@ -386,49 +385,49 @@ html, body, .app {
   -moz-box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.4);
 }
-/* line 263, ../sass/styles.sass */
+/* line 262, ../sass/styles.sass */
 .home-page .sidenav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 267, ../sass/styles.sass */
+/* line 266, ../sass/styles.sass */
 .home-page .sidenav .userInfo {
   padding: 35px 0 0 30px;
 }
-/* line 269, ../sass/styles.sass */
+/* line 268, ../sass/styles.sass */
 .home-page .sidenav .userInfo li {
   cursor: pointer;
 }
-/* line 271, ../sass/styles.sass */
+/* line 270, ../sass/styles.sass */
 .home-page .sidenav .userInfo li img {
   vertical-align: middle;
   height: 30px;
   width: 30px;
 }
-/* line 275, ../sass/styles.sass */
+/* line 274, ../sass/styles.sass */
 .home-page .sidenav .userInfo li h4 {
   margin: 0;
   margin-left: 15px;
   display: inline;
   font-size: 18px;
 }
-/* line 280, ../sass/styles.sass */
+/* line 279, ../sass/styles.sass */
 .home-page .sidenav .userLinks {
   margin: 50px 0 0 30px;
 }
-/* line 282, ../sass/styles.sass */
+/* line 281, ../sass/styles.sass */
 .home-page .sidenav .userLinks li {
   cursor: pointer;
   margin: 20px 0;
 }
-/* line 285, ../sass/styles.sass */
+/* line 284, ../sass/styles.sass */
 .home-page .sidenav .userLinks li img {
   vertical-align: middle;
   height: 20px;
   width: 20px;
 }
-/* line 289, ../sass/styles.sass */
+/* line 288, ../sass/styles.sass */
 .home-page .sidenav .userLinks li h4 {
   line-height: 10px !important;
   margin: 0;
@@ -436,18 +435,18 @@ html, body, .app {
   display: inline;
   font-size: 14px;
 }
-/* line 295, ../sass/styles.sass */
+/* line 294, ../sass/styles.sass */
 .home-page .content-wrap {
   margin: 0 auto;
 }
-/* line 297, ../sass/styles.sass */
+/* line 296, ../sass/styles.sass */
 .home-page .content-wrap .content {
   animation: FadeIn 500ms ease;
   color: white;
   display: block;
   width: 750px;
 }
-/* line 302, ../sass/styles.sass */
+/* line 301, ../sass/styles.sass */
 .home-page .content-wrap .content h1 {
   text-align: center;
 }
@@ -487,13 +486,13 @@ html, body, .app {
   }
 }
 @media (max-width: 1525px) {
-  /* line 329, ../sass/styles.sass */
+  /* line 328, ../sass/styles.sass */
   .land-content {
     display: block;
     position: relative;
   }
 
-  /* line 332, ../sass/styles.sass */
+  /* line 331, ../sass/styles.sass */
   #laptopmock {
     width: 750px;
   }

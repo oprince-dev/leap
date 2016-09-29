@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Leap</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 </head>
 <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
 <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="/src/css/styles.css">
 <body>
   <div class="app" ng-app="leap">
-    <ng-include src="'/src/partials/Nav.html'"></ng-include>
-    <ng-include src="'/src/partials/Footer.html'"></ng-include>
     <div ng-view></div>
   </div>
-
   <script src="node_modules/angular-route/angular-route.js"></script>
   <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
   <script src="node_modules/jquery/dist/jquery.js"></script>
@@ -26,6 +23,11 @@
   <script src="/src/javascripts/controllers/NavCtrl.js"></script>
   <script src="/src/javascripts/controllers/FooterCtrl.js"></script>
   <script src="/src/javascripts/controllers/SideNavCtrl.js"></script>
+  <script src="/src/javascripts/controllers/SettingsCtrl.js"></script>
+  <script src="/src/javascripts/controllers/HomeCtrls/TasksCtrl.js"></script>
+  <script src="/src/javascripts/controllers/HomeCtrls/StatsCtrl.js"></script>
+  <script src="/src/javascripts/controllers/HomeCtrls/CalendarCtrl.js"></script>
+  <script src="/src/javascripts/controllers/HomeCtrls/NotificationsCtrl.js"></script>
   <script src="/src/javascripts/config.js"></script>
 </body>
 </html>
