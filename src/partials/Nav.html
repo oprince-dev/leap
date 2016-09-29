@@ -1,13 +1,15 @@
 <nav class="navbar" ng-controller="NavCtrl">
   <div class="navbar-content">
-    <h1 class="navbar-logo" ng-click="navigate('land'); dropdownToggle = false">{{logo}}</h1>
+    <div class="logoWrap">
+      <img src="/src/img/leap.svg" class="navbar-logo" ng-click="navigate('land'); dropdownToggle = false"></img>
+    </div>
     <div class="navbar-links">
       <ul>
         <li ng-click="navigate('auth')">
           {{login}}
         </li>
         <li>
-          <i class="fa fa-bars" aria-hidden="true" ng-click="dropdownToggle = !dropdownToggle"></i>
+          <i class="fa fa-bars fa-lg" aria-hidden="true" ng-click="dropdownToggle = !dropdownToggle"></i>
         </li>
       </ul>
     </div>

@@ -2,28 +2,40 @@
   <div class="userInfo row">
     <ul>
       <li ng-click="navigate('home')">
-        <img src="/src/img/userIcons/profpic.png" alt="">
+        <i class="fa fa-user fa-lg" aria-hidden="true"></i>
         <h4>username1</h4>
       </li>
     </ul>
   </div>
   <div class="userLinks">
     <ul>
-      <li ng-click="navigate('tasks')">
-        <img src="/src/img/userIcons/tasks.png" alt="">
+      <li ng-click="navigate('tasks'); setActive('tasks')" ng-class="{active: active === '/home/tasks'}">
+        <div class="userIconWrap">
+          <i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
+        </div>
         <h4>Tasks</h4>
+        <div class="activeBar"></div>
       </li>
-      <li ng-click="navigate('stats')">
-        <img src="/src/img/userIcons/graph.png" alt="">
+      <li ng-click="navigate('stats'); setActive('stats')" ng-class="{active: active == '/home/stats'}">
+        <div class="userIconWrap">
+          <i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+        </div>
         <h4>Stats</h4>
+        <div class="activeBar"></div>
       </li>
-      <li ng-click="navigate('calendar')">
-        <img src="/src/img/userIcons/calendar.png" alt="">
+      <li ng-click="navigate('calendar'); setActive('calendar')" ng-class="{active: active == '/home/calendar'}">
+        <div class="userIconWrap">
+          <i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
+        </div>
         <h4>Calendar</h4>
+        <div class="activeBar"></div>
       </li>
-      <li ng-click="navigate('notifications')">
-        <img src="/src/img/userIcons/bell.png" alt="">
+      <li ng-click="navigate('notifications'); setActive('notifications')" ng-class="{active: active == '/home/notifications'}">
+        <div class="userIconWrap">
+          <i class="fa fa-bell fa-lg" aria-hidden="true"></i>
+        </div>
         <h4>Notifications</h4>
+        <div class="activeBar"></div>
       </li>
     </ul>
   </div>

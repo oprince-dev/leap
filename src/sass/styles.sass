@@ -6,6 +6,7 @@ html
   width: 100%
   overflow-x: hidden
   background-color: $OffWhite
+  -webkit-font-smoothing: antialiased
 body
   display: flex
   flex-direction: column
@@ -24,7 +25,7 @@ html, body, .app
 //////////////////////////////////////////////////////////////////Navbar Styling
 .navbar
   background-color: $PrimaryColor
-  height: 50px
+  height: 40px
   width: 100%
   position: fixed
   top: 0
@@ -37,37 +38,31 @@ html, body, .app
     display: flex
     justify-content: space-between
     align-items: center
-    .navbar-logo
-      flex-grow: 1
-      vertical-align: middle
-      +hide-text
-      width: auto
-      max-width: 100px
-      max-height: 30px
-      margin: 10px 0
-      background:
-        image: url(../img/leap.svg)
-        repeat: no-repeat
-        position: center center
-        size: contain
-      &:hover
-        cursor: pointer
+    .logoWrap
+      width: 70px
+      max-height: 40px
+      margin-left: 10px
+      img
+        width: 100%
+        max-height: 40px
+        object-fit: contain
+        &:hover
+          cursor: pointer
     .navbar-links
       text-align: right
       display: flex
       margin-right: 20px
-    .navbar-links > ul
-      margin: 0
-      height: 50px
-      line-height: 50px
-      // max-height: 50px
-    .navbar-links > ul > li
-      +normalize-links
-      display: inline
-      vertical-align: middle
-      margin-right: 20px
-      &.is-active
-        color: pink
+      ul
+        margin: 0
+        height: 50px
+        line-height: 50px
+        li
+          +normalize-links
+          display: inline
+          vertical-align: middle
+          margin-right: 20px
+          &.is-active
+            color: pink
 .dropdown
   position: absolute
   width: 100px
@@ -243,63 +238,147 @@ html, body, .app
       background-color: white
       color: $SecondaryColor
       padding: 10px
-
+//////////////////////////////////////////////////////////////////SideNav Styling
+.sidenav
+  float: left
+  margin: 0 !important
+  min-width: 200px
+  min-height: 100vh
+  height: 50%
+  background-color: $TertiaryColor
+  color: white
+  font: $Roboto
+  letter-spacing: 0.2px
+  -webkit-box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
+  -moz-box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
+  box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+  .userInfo
+    padding: 30px 0 0 30px
+    li
+      cursor: pointer
+      i
+        vertical-align: middle
+        size: 35px
+      h4
+        font-size: 16px
+        font-weight: 700
+        line-height: 10px !important
+        margin: 0
+        padding-left: 15px
+        display: inline
+  .active
+    background-color: $QuaternaryColor
+  .userLinks
+    margin-top: 30px
+    li
+      cursor: pointer
+      padding: 10px 0 10px 30px
+      .userIconWrap
+        display: inline-block
+        width: 20px
+        margin: 0
+        i
+          vertical-align: middle
+          size: 35px
+      h4
+        font-weight: 400
+        line-height: 10px !important
+        margin: 0
+        padding-left: 15px
+        display: inline
+        font-size: 14px
+      &.active
+        .activeBar
+          position: relative
+          transform: translateY(-10px)
+          float: right
+          width: 3px
+          height: 38px
+          background-color: rgba($PrimaryColor, 0.6)
 //////////////////////////////////////////////////////////////////Home Page Styling
-.home-page
+.page
+  background-color: $SecondaryColor
   width: 100vw
   display: inline-flex
-  .sidenav
-    float: left
-    margin: 0 !important
-    min-width: 200px
-    min-height: 100vh
-    height: 50%
-    background-color: $TertiaryColor
+  .content
+    animation: FadeIn 500ms ease
     color: white
-    -webkit-box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
-    -moz-box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
-    box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
-    ul
-      list-style: none
-      padding: 0
-      margin: 0
-    .userInfo
-      padding: 35px 0 0 30px
-      li
-        cursor: pointer
-        img
-          vertical-align: middle
-          height: 30px
-          width: 30px
-        h4
-          margin: 0
-          margin-left: 15px
-          display: inline
-          font-size: 18px
-    .userLinks
-      margin: 50px 0 0 30px
-      li
-        cursor: pointer
-        margin: 20px 0
-        img
-          vertical-align: middle
-          height: 20px
-          width: 20px
-        h4
-          line-height: 10px !important
-          margin: 0
-          padding-left: 15px
-          display: inline
-          font-size: 14px
-  .content-wrap
-    margin: 0 auto
+    display: block
+//////////////////////////////////////////////////////////////////Calendar Page Styling
+.calendar-page
+  overflow: scroll
+  .calendar-wrap
+    background-color: $TertiaryColor
+    margin: 75px auto 75px auto
+    width: 1000px
+    height: 700px
     .content
-      animation: FadeIn 500ms ease
-      color: white
-      display: block
-      width: 750px
-      h1
+      height: 100%
+      .calendar
+        display: inline-block
+        width: 80%
+        height: 100%
+        .header
+          text-align: center
+          .month, .year
+            cursor: pointer
+            display: inline-block
+            font-size: 50px
+            margin: 10px 5px
+          .year
+            font-weight: 100
+            font-style: italic
+          i
+            transform: translateY(-10px)
+            margin: 30px
+            color: $PrimaryColor
+        .days, .dates
+          width: 100%
+          display: flex
+          justify-content: space-around
+          .tile
+            text-align: center
+            min-width: 100px
+          h4
+            display: inline-block
+            cursor: pointer
+        .dates
+          h1
+            font-size: 50px
+            font-weight: 100
+            margin: 10px 0
+            cursor: pointer
+          .tile:hover
+            background-color: rgba($SecondaryColor, 0.5)
+            transition: 300ms ease-in
+          .dateFade
+            color: $SecondaryColor
+            font-style: italic
+      .dailies
         text-align: center
+        background-color: rgba(0,0,0,0.4)
+        height: 100%
+        width: 20%
+        float: right
+      .days-wrap
+        display: flex
+        flex-wrap: wrap
+        align-content: space-around
+        height: calc(623px)
+        // background-color: pink
+
+
+
+
+
 //////////////////////////////////////////////////////////////////Animations
 @keyframes LandSlide
   0%
