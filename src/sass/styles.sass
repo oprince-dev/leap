@@ -3,16 +3,22 @@
 
 html
   position: relative
-  height: 100%
   width: 100%
   overflow-x: hidden
+  background-color: $OffWhite
 body
   display: flex
   flex-direction: column
-  min-height: 100%
   font-family: $Roboto
   width: 100%
   -webkit-font-smoothing: antialiased
+
+html, body, .app
+  height: 100vh
+  overflow: hidden
+
+.auth-page, .home-page, .settings-page
+  background-color: $SecondaryColor
 
 
 //////////////////////////////////////////////////////////////////Navbar Styling
@@ -26,60 +32,60 @@ body
   margin: 0
   position: relative
   z-index: 3
-.navbar-content
-  height: 100%
-  display: flex
-  justify-content: space-between
-  align-items: center
-.navbar-logo
-  flex-grow: 1
-  vertical-align: middle
-  +hide-text
-  width: auto
-  max-width: 100px
-  max-height: 30px
-  margin: 10px 0
-  background:
-    image: url(../img/leap.svg)
-    repeat: no-repeat
-    position: center center
-    size: contain
-  &:hover
-    cursor: pointer
-.navbar-links
-  text-align: right
-  display: flex
-  margin-right: 20px
-.navbar-links > ul
-  margin: 0
-  height: 50px
-  line-height: 50px
-  // max-height: 50px
-.navbar-links > ul > li
-  +normalize-links
-  display: inline
-  vertical-align: middle
-  margin-right: 20px
-  &.is-active
-    color: pink
+  .navbar-content
+    height: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .navbar-logo
+      flex-grow: 1
+      vertical-align: middle
+      +hide-text
+      width: auto
+      max-width: 100px
+      max-height: 30px
+      margin: 10px 0
+      background:
+        image: url(../img/leap.svg)
+        repeat: no-repeat
+        position: center center
+        size: contain
+      &:hover
+        cursor: pointer
+    .navbar-links
+      text-align: right
+      display: flex
+      margin-right: 20px
+    .navbar-links > ul
+      margin: 0
+      height: 50px
+      line-height: 50px
+      // max-height: 50px
+    .navbar-links > ul > li
+      +normalize-links
+      display: inline
+      vertical-align: middle
+      margin-right: 20px
+      &.is-active
+        color: pink
 .dropdown
   position: absolute
-  top: 50px
-  right: -300px
-  display: flex
-  flex-direction: column
-  height: auto
-  padding: 0 !important
-.dropdown > li
-  background-color: $TertiaryColor
-  +normalize-links
-  display: none !important
-  padding: 10px 20px 10px 50px
-  animation: dropdown 500ms cubic-bezier(0, 0, 0.3, 1) forwards
-  &:hover
-    background-color: $PrimaryColor
-.isDown > li
-  display: block !important
+  width: 100px
+  right: 0px
+  margin: 0
+  padding: 0
+  list-style: none
+  li
+    background-color: $TertiaryColor
+    +normalize-links
+    padding: 10px 20px
+    color: white
+    &:hover
+      background-color: $PrimaryColor
+.dropdown.ng-hide-add
+  animation: dropSlidein 200ms cubic-bezier(0, 0, 0.1, 1)
+.dropdown.ng-hide-remove
+  animation: dropSlideOut 200ms cubic-bezier(0, 0, 0.1, 1)
 
 
 //////////////////////////////////////////////////////////////////Footer Styling
@@ -87,9 +93,9 @@ body
   background-color: $PrimaryColor
   height: 135px
   width: 100%
-  position: relative
-  bottom: 0px
-  left: 0px
+  position: absolute
+  bottom: 0
+  left: 0
   z-index: 3
   margin-top: 10px
 .footer-content
@@ -134,7 +140,7 @@ body
   width: 100%
   min-height: calc(100vh - 299px)
   margin-top: 100px
-  background-color: white
+  background-color: $OffWhite
   display: inline-block
 .device-mocks
   position: absolute
@@ -205,18 +211,17 @@ body
 .auth-page
   width: 100%
   min-height: calc(100vh - 295px)
-  margin-top: 100px
-  background-color: white
   display: flex
   flex-direction: column
   .auth
     width: 500px
-    margin: 0 auto
+    margin: 100px auto 0 auto
     text-align: center
+    animation: FadeIn 500ms ease
     h1
       font-style: bold
       font-size: 65px
-      color: $SecondaryColor
+      color: white
       display: block
       margin-bottom: 0
     h3
@@ -235,9 +240,67 @@ body
       border-radius: 2px
       border: 0
       height: 20px
-      background-color: $SecondaryColor
-      color: white
+      background-color: white
+      color: $SecondaryColor
       padding: 10px
+
+//////////////////////////////////////////////////////////////////Home Page Styling
+.home-page
+  width: 100vw
+  display: inline-flex
+  .sidenav
+    animation: FadeIn 500ms ease
+    float: left
+    margin: 0 !important
+    min-width: 200px
+    min-height: 100vh
+    height: 50%
+    background-color: $TertiaryColor
+    color: white
+    -webkit-box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
+    -moz-box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
+    box-shadow: 2px 0px 0px 2px rgba(0,0,0,0.4)
+    ul
+      list-style: none
+      padding: 0
+      margin: 0
+    .userInfo
+      padding: 35px 0 0 30px
+      li
+        cursor: pointer
+        img
+          vertical-align: middle
+          height: 30px
+          width: 30px
+        h4
+          margin: 0
+          margin-left: 15px
+          display: inline
+          font-size: 18px
+    .userLinks
+      margin: 50px 0 0 30px
+      li
+        cursor: pointer
+        margin: 20px 0
+        img
+          vertical-align: middle
+          height: 20px
+          width: 20px
+        h4
+          line-height: 10px !important
+          margin: 0
+          padding-left: 15px
+          display: inline
+          font-size: 14px
+  .content-wrap
+    margin: 0 auto
+    .content
+      animation: FadeIn 500ms ease
+      color: white
+      display: block
+      width: 750px
+      h1
+        text-align: center
 //////////////////////////////////////////////////////////////////Animations
 @keyframes LandSlide
   0%
@@ -251,12 +314,16 @@ body
     opacity: 0
   100%
     opacity: 1
-@keyframes dropdown
+@keyframes dropSlidein
   0%
     transform: translate3d(0, 0, 0)
   100%
-    transform: translate3d(-300px, 0, 0)
-
+    transform: translate3d(100px, 0, 0)
+@keyframes dropSlideOut
+  0%
+    transform: translate3d(100px, 0, 0)
+  100%
+    transform: translate3d(0, 0, 0)
 
 @media (max-width : 1525px)
   .land-content

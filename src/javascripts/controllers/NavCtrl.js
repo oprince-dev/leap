@@ -5,22 +5,20 @@
     .controller('NavCtrl', function($scope, $location) {
       $scope.logo = "leap";
       $scope.login = "Login";
-      $scope.dropdown = function() {
-        $scope.isDown = !$scope.isDown;
-      };
+      $scope.dropdownToggle = false;
       $scope.dropdownItems = [
-        {route: 'Settings', name: 'Settings'},
-        {route: 'Auth', name: 'Auth'}
+        {route: 'settings', name: 'Settings'},
+        {route: 'auth', name: 'Auth'}
       ];
       $scope.navigate = function(route) {
-        if (route == 'Home') {
+        if (route == 'land') {
           $location.path('/');
         }
-        else if (route == 'Auth') {
-          $location.path('Auth');
+        else if (route == 'auth') {
+          $location.path('auth');
         }
-        else if (route == 'Settings') {
-          $location.path('Settings');
+        else if (route == 'settings') {
+          $location.path('settings');
         }
       };
     });

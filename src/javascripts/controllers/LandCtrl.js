@@ -4,7 +4,7 @@
   angular.module('leap')
     .controller('LandCtrl', function($scope, $location) {
       $scope.toAuth = function() {
-        $location.path('Auth');
+        $location.path('auth');
       };
       $scope.phonemock = '/src/img/phone-mock.png';
       $scope.laptopmock = '/src/img/laptop-mock.png';
