@@ -28,6 +28,17 @@ $Souvenir: 'SouvenirStd-DemiItalic'
   height: 100%
   line-height: 50px
 
+=selectNone
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=pageShadow
+  -webkit-box-shadow: 2px 2px 0px 2px rgba(0,0,0,0.3)
+  -moz-box-shadow: 2px 2px 0px 2px rgba(0,0,0,0.3)
+  box-shadow: 2px 2px 0px 2px rgba(0,0,0,0.3)
+
 =normalize-links
   text-decoration: none
   color: white
@@ -43,6 +54,11 @@ $starting-mock-x: -2000px
   overflow: hidden
   text-indent: -9000px
   display: block
+
+hr
+  border: 1px solid rgba($QuaternaryColor, 0.5) !important
+  margin: 10px 0 !important
+
 
 .ng-scope
   height: 100%

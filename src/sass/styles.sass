@@ -143,7 +143,7 @@ html, body, .app
   left: 0
   width: 20%
 #phonemock
-  background-image: url('../img/phone-mock.png')
+  background-image: url('/src/img/phone-mock.png')
   background-repeat: no-repeat
   background-size: contain
   background-position: bottom left
@@ -155,7 +155,7 @@ html, body, .app
   margin-left: 30px
   position: absolute
 #laptopmock
-  background-image: url('../img/laptop-mock.png')
+  background-image: url('/src/img/laptop-mock.png')
   background-repeat: no-repeat
   background-size: contain
   background-position: center right
@@ -213,6 +213,7 @@ html, body, .app
     margin: 100px auto 0 auto
     text-align: center
     animation: FadeIn 500ms ease
+    +selectNone
     h1
       font-style: bold
       font-size: 65px
@@ -239,7 +240,7 @@ html, body, .app
       color: $SecondaryColor
       padding: 10px
 //////////////////////////////////////////////////////////////////SideNav Styling
-.sidenav
+.sideNav
   float: left
   margin: 0 !important
   min-width: 200px
@@ -256,10 +257,7 @@ html, body, .app
     list-style: none
     padding: 0
     margin: 0
-    -webkit-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
-    user-select: none
+    +selectNone
   .userInfo
     padding: 30px 0 0 30px
     li
@@ -303,33 +301,128 @@ html, body, .app
           width: 3px
           height: 38px
           background-color: rgba($PrimaryColor, 0.6)
-//////////////////////////////////////////////////////////////////Home Page Styling
+//////////////////////////////////////////////////////////////////Page Styling
 .page
   background-color: $SecondaryColor
   width: 100vw
   display: inline-flex
+  overflow: hidden
   .content
     animation: FadeIn 500ms ease
     color: white
     display: block
+//////////////////////////////////////////////////////////////////Home Page Styling
+.home-page
+  .home-wrap
+    +pageShadow
+    background-color: $TertiaryColor
+    width: 1000px
+    margin: 0 auto
+    .user-wrap
+      margin: 50px 0 0 0
+      .userProfPic
+        margin: 0 auto
+        width: 150px
+        height: 150px
+        background-color: white
+        border-radius: 50%
+      .username
+        text-align: center
+    .userDisplay-wrap
+      display: inline-flex
+      width: 100%
+      margin-top: 30px
+      .recent-activity, .starred
+        width: 50%
+        height: 400px
+        margin: 0 30px
+      .recent-activity
+        table
+          width: 100%
+          th
+            width: 70%
+            text-align: left
+            font-size: 20px
+            padding-bottom: 10px
+            border-bottom: 1px solid rgba($QuaternaryColor, 0.5) !important
+          tbody
+            td
+              padding: 10px 0
+              border-bottom: 1px solid rgba($QuaternaryColor, 0.5) !important
+            td:nth-child(2)
+              width: 30%
+              padding-right: 0px
+              color: rgba(white, 0.5)
+              font-style: italic
+      .starred
+        h3
+          margin: 0
+          font-size: 20px
+        .nav
+          border-bottom: 1px solid rgba($QuaternaryColor, 0.5) !important
+          li a
+            border: none
+            color: white
+            margin: 0
+          li.active a
+            border: none
+            background-color: $PrimaryColor
+          li a:visited
+            background-color: rgba(black, 0) !important
+            border: none
+          li a:hover
+            background-color: $SecondaryColor
+            border: none
+          li a:focus
+            background-color: $TertiaryColor
+            border: none
+        .starred-items
+          background-color: $SecondaryColor
+          height: 300px
+          h5
+            padding: 10px 0 0 10px
+            margin: 0
+            font-weight: 100
+
+//////////////////////////////////////////////////////////////////Tasks Page Styling
+.tasks-page
+  .tasks-wrap
+    +pageShadow
+    background-color: $TertiaryColor
+    width: 1000px
+    margin: 0 auto
+//////////////////////////////////////////////////////////////////Stats Page Styling
+.stats-page
+  .stats-wrap
+    +pageShadow
+    background-color: $TertiaryColor
+    width: 1000px
+    margin: 0 auto
+//////////////////////////////////////////////////////////////////Notifications Page Styling
+.notifications-page
+  .notifications-wrap
+    +pageShadow
+    background-color: $TertiaryColor
+    width: 1000px
+    margin: 0 auto
 //////////////////////////////////////////////////////////////////Calendar Page Styling
 .calendar-page
-  overflow: scroll
   .calendar-wrap
     background-color: $TertiaryColor
-    margin: 75px auto 75px auto
+    margin: 75px auto
     width: 1000px
     height: 700px
+    +pageShadow
     .content
       height: 100%
       .calendar
         display: inline-block
         width: 80%
         height: 100%
+        +selectNone
         .header
           text-align: center
           .month, .year
-            cursor: pointer
             display: inline-block
             font-size: 50px
             margin: 10px 5px
@@ -340,6 +433,7 @@ html, body, .app
             transform: translateY(-10px)
             margin: 30px
             color: $PrimaryColor
+            cursor: pointer
         .days, .dates
           width: 100%
           display: flex
@@ -373,7 +467,6 @@ html, body, .app
         flex-wrap: wrap
         align-content: space-around
         height: calc(623px)
-        // background-color: pink
 
 
 

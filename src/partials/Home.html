@@ -1,10 +1,59 @@
 <ng-include src="'/src/partials/Nav.html'" ng-if="showNav"></ng-include>
-<div class="home-page">
+<div class="home-page page">
   <ng-include src="'/src/partials/SideNav.html'"></ng-include>
-  <ng-inclue src="'/src/partials/SideNav.html'"></ng-include>
-  <div class="content-wrap">
+  <div class="home-wrap">
     <div class="content">
-      <h1>Home</h1>
+      <div class="user-wrap">
+        <div class="userProfPic"></div>
+        <div class="username">
+          <h3>username1</h3>
+        </div>
+      </div>
+      <div class="userDisplay-wrap">
+        <div class="recent-activity">
+          <table>
+            <thead>
+              <tr>
+                <th>Recent Activity</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>added task 1</td>
+                <td>4 hours ago</td>
+              </tr>
+              <tr>
+                <td>added task 2</td>
+                <td>10 hours ago</td>
+              </tr>
+              <tr>
+                <td>added task 3</td>
+                <td>3 days ago</td>
+              </tr>
+              <tr>
+                <td>added task 4</td>
+                <td>yesterday</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="starred">
+          <h3>Starred</h3>
+          <hr>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="">Day</a></li>
+            <li><a href="">Week</a></li>
+            <li><a href="">Month</a></li>
+          </ul>
+          <div class="starred-items">
+            <h5>task 1</h5>
+            <h5>task 2</h5>
+            <h5>task 3</h5>
+            <h5></h5>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
