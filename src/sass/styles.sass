@@ -33,6 +33,10 @@ html, body, .app
   margin: 0
   position: relative
   z-index: 3
+  border-radius: 0px !important
+  -webkit-box-shadow: 0px -20px 24px 10px rgba(0,0,0,0.75)
+  -moz-box-shadow: 0px -20px 24px 10px rgba(0,0,0,0.75)
+  box-shadow: 0px -20px 24px 10px rgba(0,0,0,0.75)
   .navbar-content
     height: 100%
     display: flex
@@ -134,7 +138,7 @@ html, body, .app
 .land-page
   width: 100%
   min-height: calc(100vh - 299px)
-  margin-top: 100px
+  padding-top: 100px
   background-color: $OffWhite
   display: inline-block
 .device-mocks
@@ -188,7 +192,7 @@ html, body, .app
   background-color:  $PrimaryColor
   border: none
   border-radius: 5px
-  width: 75px
+  width: 125px !important
   display: block
   margin: auto
   margin-bottom: 100px
@@ -210,7 +214,8 @@ html, body, .app
   flex-direction: column
   .auth
     width: 500px
-    margin: 100px auto 0 auto
+    margin: auto
+    transform: translateY(-30%)
     text-align: center
     animation: FadeIn 500ms ease
     +selectNone
@@ -225,7 +230,7 @@ html, body, .app
       font-style: italic
       font-weight: 100
       color: $PrimaryColor
-      margin-top: 0
+      margin: 0 0 20px 0
       padding-left: 100px
 
     input
@@ -233,12 +238,14 @@ html, body, .app
       flex-direction: column
       margin: 10px auto
       width: 60%
-      border-radius: 2px
+      border-radius: 3px
       border: 0
-      height: 20px
+      height: 30px
       background-color: white
       color: $SecondaryColor
-      padding: 10px
+      padding: 0 10px
+    .signUpCTA
+      margin-top: 20px
 //////////////////////////////////////////////////////////////////SideNav Styling
 .sideNav
   float: left
@@ -260,6 +267,7 @@ html, body, .app
     +selectNone
   .userInfo
     padding: 30px 0 0 30px
+    margin: 0
     li
       cursor: pointer
       i
@@ -356,23 +364,30 @@ html, body, .app
               font-style: italic
       .starred
         h3
+          height: 28px
+          line-height: 28px
+          vertical-align: middle
+          padding-bottom: 10px
           margin: 0
           font-size: 20px
         .nav
-          border-bottom: 1px solid rgba($QuaternaryColor, 0.5) !important
+          border: none
+          height: 30px
+          // border-bottom: 1px solid rgba($QuaternaryColor, 0.5) !important
           li a
             border: none
             color: white
-            margin: 0
-          li.active a
-            border: none
-            background-color: $PrimaryColor
+            margin-right: 4px
+            padding: 5px 20px !important
           li a:visited
-            background-color: rgba(black, 0) !important
+            background-color: $PrimaryColor !important
             border: none
           li a:hover
-            background-color: $SecondaryColor
+            background-color: $PrimaryColor !important
             border: none
+          li.active a
+            border: none
+            background-color: none
           li a:focus
             background-color: $TertiaryColor
             border: none

@@ -42,15 +42,14 @@
           <h3>Starred</h3>
           <hr>
           <ul class="nav nav-tabs">
-            <li class="active"><a href="">Day</a></li>
-            <li><a href="">Week</a></li>
-            <li><a href="">Month</a></li>
+            <li ng-repeat="tab in tabs" ng-class="{active:  checkTab(tab.bat)}" ng-click="tabSelect(tab.bat)">
+              <a href="">{{tab.title}}</a>
+            </li>
           </ul>
           <div class="starred-items">
-            <h5>task 1</h5>
-            <h5>task 2</h5>
-            <h5>task 3</h5>
-            <h5></h5>
+            <h5 ng-show="checkTab('day')">day content</h5>
+            <h5 ng-show="checkTab('week')">week content</h5>
+            <h5 ng-show="checkTab('month')">month content</h5>
           </div>
         </div>
       </div>
