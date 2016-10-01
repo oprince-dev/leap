@@ -1,12 +1,12 @@
-<div class="footer" ng-controller="FooterCtrl">
+<div class="footer" ng-controller="FooterCtrl as footer">
   <div class="footer-content">
     <div class="socmed">
-      <div ng-repeat="img in socmed">
-        <img src="{{getImagePath(img)}}" class="socmed-img" alt="Social media"/>
+      <div ng-repeat="img in footer.socmed">
+        <img src="{{footer.getImagePath(img)}}" class="socmed-img" alt="Social media"/>
       </div>
     </div>
     <div class="contact">
-      <div class="contact-col" ng-repeat="contact in contacts">
+      <div class="contact-col" ng-repeat="contact in footer.contacts">
         <p class="contact-head">
           {{contact.head}}
         </p>

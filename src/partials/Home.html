@@ -1,4 +1,4 @@
-<ng-include src="'/src/partials/Nav.html'" ng-if="showNav"></ng-include>
+<ng-include src="'/src/partials/Nav.html'" ng-if="home.showNav"></ng-include>
 <div class="home-page page">
   <ng-include src="'/src/partials/SideNav.html'"></ng-include>
   <div class="home-wrap">
@@ -6,7 +6,7 @@
       <div class="user-wrap">
         <div class="userProfPic"></div>
         <div class="username">
-          <h3>username1</h3>
+          <h3>{{home.userEmail}}</h3>
         </div>
       </div>
       <div class="userDisplay-wrap">
@@ -42,14 +42,14 @@
           <h3>Starred</h3>
           <hr>
           <ul class="nav nav-tabs">
-            <li ng-repeat="tab in tabs" ng-class="{active:  checkTab(tab.bat)}" ng-click="tabSelect(tab.bat)">
+            <li ng-repeat="tab in home.tabs" ng-class="{active:  home.checkTab(tab.bat)}" ng-click="home.tabSelect(tab.bat)">
               <a href="">{{tab.title}}</a>
             </li>
           </ul>
           <div class="starred-items">
-            <h5 ng-show="checkTab('day')">day content</h5>
-            <h5 ng-show="checkTab('week')">week content</h5>
-            <h5 ng-show="checkTab('month')">month content</h5>
+            <h5 ng-show="home.checkTab('day')">day content</h5>
+            <h5 ng-show="home.checkTab('week')">week content</h5>
+            <h5 ng-show="home.checkTab('month')">month content</h5>
           </div>
         </div>
       </div>

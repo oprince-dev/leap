@@ -1,18 +1,18 @@
-<ng-include src="'/src/partials/Nav.html'" ng-if="showNav"></ng-include>
+<ng-include src="'/src/partials/Nav.html'" ng-if="land.showNav"></ng-include>
 <div class="land-page">
   <div class="device-mocks">
     <div id="phonemock"></div>
     <div id="laptopmock"></div>
   </div>
   <div class="land-content">
-    <img src="{{phrase}}" id="phrase" alt="Manage your time with Leap"/>
-    <div class="signUpCTA" ng-click="toAuth()">
-      {{sign}}
+    <img src="{{land.phrase}}" id="phrase" alt="Manage your time with Leap"/>
+    <div class="signUpCTA" ng-click="land.toAuth()">
+      {{land.sign}}
     </div>
     <div class="badges">
-      <img src="{{googleplay}}" alt="Google Play Leap Download">
-      <img src="{{appstore}}" alt="App Store Leap Download">
+      <img src="{{land.googleplay}}" alt="Google Play Leap Download">
+      <img src="{{land.appstore}}" alt="App Store Leap Download">
     </div>
   </div>
 </div>
-<ng-include src="'/src/partials/Footer.html'" ng-if="showFooter"></ng-include>
+<ng-include src="'/src/partials/Footer.html'" ng-if="land.showFooter"></ng-include>

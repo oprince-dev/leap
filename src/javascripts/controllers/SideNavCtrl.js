@@ -3,6 +3,13 @@
 
   angular.module('leap')
     .controller('SideNavCtrl', function($scope, $location) {
+    //// Vars
+      const sidenav = this;
+      const user = firebase.auth().currentUser;
+      const uid = user.uid;
+      $scope.userEmail = user.email;
+
+    //// Functions
       $scope.navigate = function(page) {
         if (page == 'home') {
           $location.path('home');
@@ -17,4 +24,4 @@
         }
       };
     });
-}());
+})();

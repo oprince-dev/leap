@@ -1,21 +1,24 @@
-<nav class="navbar" ng-controller="NavCtrl">
+<nav class="navbar" ng-controller="NavCtrl as nav">
   <div class="navbar-content">
     <div class="logoWrap">
-      <img src="/src/img/leap.svg" class="navbar-logo" ng-click="navigate('land'); dropdownToggle = false"></img>
+      <img src="/src/img/leap.svg" class="navbar-logo" ng-click="nav.navigate('land'); nav.dropdownToggle = false"></img>
     </div>
     <div class="navbar-links">
       <ul>
-        <li ng-click="navigate('auth')">
-          {{login}}
+        <li ng-click="nav.navigate('auth')">
+          {{nav.login}}
+        </li>
+        <li ng-click="nav.logUserOut();">
+          {{nav.logout}}
         </li>
         <li>
-          <i class="fa fa-bars fa-lg" aria-hidden="true" ng-click="dropdownToggle = !dropdownToggle"></i>
+          <i class="fa fa-bars fa-lg" aria-hidden="true" ng-click="nav.dropdownToggle = !nav.dropdownToggle"></i>
         </li>
       </ul>
     </div>
   </div>
-  <ul class="dropdown" ng-show="dropdownToggle" ng-click="dropdownToggle = false">
-    <li ng-repeat="choice in dropdownItems" ng-click="navigate(choice.route)">
+  <ul class="dropdown" ng-show="nav.dropdownToggle" ng-click="nav.dropdownToggle = false">
+    <li ng-repeat="choice in nav.dropdownItems" ng-click="nav.navigate(choice.route)">
       {{choice.name}}
     </li>
   </ul>

@@ -3,14 +3,19 @@
 
   angular.module('leap')
     .controller('NavCtrl', function($scope, $location) {
-      $scope.logo = "leap";
-      $scope.login = "Login";
-      $scope.dropdownToggle = false;
-      $scope.dropdownItems = [
+    //// Vars
+      const nav = this;
+      nav.logoutSwitch = true;
+      nav.logo = "leap";
+      nav.logout = "Logout";
+      nav.login = "Login";
+      nav.dropdownToggle = false;
+      nav.dropdownItems = [
         {route: 'settings', name: 'Settings'},
         {route: 'auth', name: 'Auth'}
       ];
-      $scope.navigate = function(route) {
+    //// Functions
+      nav.navigate = function(route) {
         if (route == 'land') {
           $location.path('/');
         }
@@ -20,6 +25,11 @@
         else if (route == 'settings') {
           $location.path('settings');
         }
+      };
+      nav.logUserOut = function() {
+        console.log('signing out');
+        firebase.auth().signOut();
+        $location.path('/auth');
       };
     });
 }());

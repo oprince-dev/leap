@@ -214,8 +214,8 @@ html, body, .app
   flex-direction: column
   .auth
     width: 500px
-    margin: auto
-    transform: translateY(-30%)
+    margin: 100px auto
+    // transform: translateY(-30%)
     text-align: center
     animation: FadeIn 500ms ease
     +selectNone
@@ -244,6 +244,21 @@ html, body, .app
       background-color: white
       color: $SecondaryColor
       padding: 0 10px
+    .authSwitch-row
+      font: $Roboto
+      font-weight: 100
+      color: white
+      display: inline-flex
+      p
+        padding-right: 10px
+      a
+        color: $PrimaryColor
+        font-style: italic
+        font-weight: 700
+        cursor: pointer
+        text-decoration: none
+        &:hover
+          color: rgba($PrimaryColor, 0.5)
     .signUpCTA
       margin-top: 20px
 //////////////////////////////////////////////////////////////////SideNav Styling
