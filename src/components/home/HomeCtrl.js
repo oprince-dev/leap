@@ -1,11 +1,11 @@
 (function() {
   'use strict';
-
+  
   angular.module('leap')
-    .controller('HomeCtrl', function($location) {
+    .controller('HomeCtrl', function($route, $location) {
+      const user = firebase.auth().currentUser;
     //// Vars
       const home = this;
-      const user = firebase.auth().currentUser;
       const uid = user.uid;
       home.userEmail = user.email;
       home.username = user.displayName;
@@ -27,15 +27,11 @@
       home.tabSelect = function(bat) {
         home.tab = bat;
       };
-      home.checkTab = function (tab) {
+      home.checkTab = function(tab) {
         return home.tab === tab;
       };
-      home.checkAuth = function(uid) {
-        if (uid === null) {
-          console.log('signing out');
-          firebase.auth().signOut();
-          $location.path('/auth');
-        }
+      home.reload = function() {
+        $route.reload();
       };
     });
 })();

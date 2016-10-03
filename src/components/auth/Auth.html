@@ -1,0 +1,32 @@
+<ng-include src="'/src/components/nav/Nav.html'" ng-if="auth.showNav"></ng-include>
+<div class="auth-page">
+  <div class="auth">
+    <h1>Sign up!</h1>
+    <h3>it's free!</h3>
+    <form ng-submit="auth.callCreateUser()">
+      <div id="register-wrap" ng-show="!authSwitch">
+        <input class="input-field" placeholder="username" type="username" ng-model="auth.username">
+        <input class="input-field" placeholder="email" type="email" ng-model="auth.email">
+        <input class="input-field" placeholder="password" type="password" ng-model="auth.password">
+        <div class="authSwitch-row">
+          <p>Already have an account?</p>
+          <a ng-click="authSwitch = !authSwitch">Login</a>
+        </div>
+        <input class="signUpCTA" value="{{auth.create}}" type="submit" ng-keypress="auth.callCreateUser()">
+    </form>
+      <p>{{auth.errorMessage}}</p>
+    </div>
+    <div id="login-wrap" ng-show="authSwitch">
+      <form ng-submit="auth.callLoginUser()">
+        <input class="input-field" placeholder="email" type="email" ng-model="auth.email">
+        <input class="input-field" placeholder="password" type="password" ng-model="auth.password">
+        <div class="authSwitch-row">
+          <p>Don't have an account yet?</p>
+          <a ng-click="authSwitch = !authSwitch">Register</a>
+        </div>
+        <input class="signUpCTA" value="{{auth.login}}" type="submit" ng-keypress="auth.callLoginUser()">
+      </form>
+    </div>
+  </div>
+</div>
+<ng-include src="'/src/components/footer/Footer.html'" ng-if="auth.showFooter"></ng-include>

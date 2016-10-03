@@ -3,3 +3,5 @@ bower_components/
 mock/
 .sass-cache/
 src/sass/
+
+src/javascripts/services/sessionCookieService.js

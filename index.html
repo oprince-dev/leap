@@ -9,32 +9,36 @@
 <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
 <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
 <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-<link rel="stylesheet" href="/src/css/styles.css">
+<link rel="stylesheet" href="/src/assets/css/styles.css">
 <body>
   <div class="app" ng-app="leap">
     <div ng-view></div>
   </div>
   <script src="node_modules/angular-route/angular-route.js"></script>
+  <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/angular-animate/angular-animate.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
-  <script src="/src/javascripts/leap.js"></script>
+  <script src="/src/leap.js"></script>
 
   <!-- Controllers  -->
-  <script src="/src/javascripts/controllers/LandCtrl.js"></script>
-  <script src="/src/javascripts/controllers/HomeCtrl.js"></script>
-  <script src="/src/javascripts/controllers/AuthCtrl.js"></script>
-  <script src="/src/javascripts/controllers/NavCtrl.js"></script>
-  <script src="/src/javascripts/controllers/FooterCtrl.js"></script>
-  <script src="/src/javascripts/controllers/SideNavCtrl.js"></script>
-  <script src="/src/javascripts/controllers/SettingsCtrl.js"></script>
-  <script src="/src/javascripts/controllers/HomeCtrls/TasksCtrl.js"></script>
-  <script src="/src/javascripts/controllers/HomeCtrls/StatsCtrl.js"></script>
-  <script src="/src/javascripts/controllers/HomeCtrls/CalendarCtrl.js"></script>
-  <script src="/src/javascripts/controllers/HomeCtrls/NotificationsCtrl.js"></script>
-  <script src="/src/javascripts/config.js"></script>
+  <script src="/src/services/authService.js"></script>
+  <script src="/src/services/authCheck.js"></script>
+  <script src="/src/services/sessionCookieService.js"></script>
+  <script src="/src/components/land/LandCtrl.js"></script>
+  <script src="/src/components/home/HomeCtrl.js"></script>
+  <script src="/src/components/auth/AuthCtrl.js"></script>
+  <script src="/src/components/nav/NavCtrl.js"></script>
+  <script src="/src/components/footer/FooterCtrl.js"></script>
+  <script src="/src/components/sidenav/SideNavCtrl.js"></script>
+  <script src="/src/components/settings/SettingsCtrl.js"></script>
+  <script src="/src/components/tasks/TasksCtrl.js"></script>
+  <script src="/src/components/stats/StatsCtrl.js"></script>
+  <script src="/src/components/calendar/CalendarCtrl.js"></script>
+  <script src="/src/components/notifications/NotificationsCtrl.js"></script>
+  <script src="/src/config.js"></script>
 </body>
 </html>

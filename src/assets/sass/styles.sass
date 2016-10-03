@@ -147,7 +147,7 @@ html, body, .app
   left: 0
   width: 20%
 #phonemock
-  background-image: url('/src/img/phone-mock.png')
+  background-image: url('/src/assets/img/phone-mock.png')
   background-repeat: no-repeat
   background-size: contain
   background-position: bottom left
@@ -159,7 +159,7 @@ html, body, .app
   margin-left: 30px
   position: absolute
 #laptopmock
-  background-image: url('/src/img/laptop-mock.png')
+  background-image: url('/src/assets/img/laptop-mock.png')
   background-repeat: no-repeat
   background-size: contain
   background-position: center right
@@ -183,20 +183,23 @@ html, body, .app
   width: 100%
   margin-bottom: 40px
   width: 100%
+
 .signUpCTA
   +normalize-links
-  font-family: $Roboto
-  font-size: 20px
-  text-align: center
-  color: white
-  background-color:  $PrimaryColor
-  border: none
-  border-radius: 5px
-  width: 125px !important
   display: block
-  margin: auto
-  margin-bottom: 100px
-  padding: 10px 25px
+  font-family: $Roboto
+  font-size: 20px !important
+  text-align: center !important
+  color: white !important
+  background-color:  $PrimaryColor !important
+  border: none !important
+  border-radius: 5px !important
+  height: 45px !important
+  line-height: 45px !important
+  width: 125px !important
+  display: block !important
+  margin: auto !important
+  margin-bottom: 100px !important
 .badges
   display: flex
   justify-content: center
@@ -233,9 +236,8 @@ html, body, .app
       margin: 0 0 20px 0
       padding-left: 100px
 
-    input
+    .input-field
       display: flex
-      flex-direction: column
       margin: 10px auto
       width: 60%
       border-radius: 3px
@@ -260,7 +262,7 @@ html, body, .app
         &:hover
           color: rgba($PrimaryColor, 0.5)
     .signUpCTA
-      margin-top: 20px
+      margin-top: 40px
 //////////////////////////////////////////////////////////////////SideNav Styling
 .sideNav
   float: left

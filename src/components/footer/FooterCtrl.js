@@ -11,7 +11,7 @@
         "socmed_github.png",
         "socmed_instagram.png",
         "socmed_twitter.png",
-        "socmed_fb.png",
+        "socmed_fb.png"
       ];
       footer.contacts = [
         {head: "Email", info: "team@leap.com"},
@@ -20,7 +20,7 @@
       ];
     //// Functions
       footer.getImagePath = function(imageName) {
-        return "/src/img/socmed/" + imageName;
+        return "/src/assets/img/socmed/" + imageName;
         };
     });
 }());

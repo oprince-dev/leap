@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('leap', ['ngRoute', 'ui.bootstrap', 'ngAnimate']);
+  angular.module('leap', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngCookies']);
 
   // Initialize Firebase
   var config = {

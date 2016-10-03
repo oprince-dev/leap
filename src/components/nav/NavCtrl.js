@@ -2,10 +2,9 @@
   'use strict';
 
   angular.module('leap')
-    .controller('NavCtrl', function($scope, $location) {
+    .controller('NavCtrl', function($rootScope, $scope, $location, authService, authCheck) {
     //// Vars
       const nav = this;
-      nav.logoutSwitch = true;
       nav.logo = "leap";
       nav.logout = "Logout";
       nav.login = "Login";
@@ -26,10 +25,10 @@
           $location.path('settings');
         }
       };
-      nav.logUserOut = function() {
-        console.log('signing out');
-        firebase.auth().signOut();
-        $location.path('/auth');
+      nav.logoutUser = function() {
+        authService.logoutUser();
+        console.log('logging out');
       };
+      console.log($rootScope);
     });
 }());

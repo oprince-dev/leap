@@ -1,6 +1,6 @@
-<ng-include src="'/src/partials/Nav.html'" ng-if="home.showNav"></ng-include>
+<ng-include src="'/src/components/nav/Nav.html'" ng-if="home.showNav"></ng-include>
 <div class="home-page page">
-  <ng-include src="'/src/partials/SideNav.html'"></ng-include>
+  <ng-include src="'/src/components/sidenav/SideNav.html'"></ng-include>
   <div class="home-wrap">
     <div class="content">
       <div class="user-wrap">
@@ -40,6 +40,7 @@
         </div>
         <div class="starred">
           <h3>Starred</h3>
+          <button ng-click="home.reload()">reload</button>
           <hr>
           <ul class="nav nav-tabs">
             <li ng-repeat="tab in home.tabs" ng-class="{active:  home.checkTab(tab.bat)}" ng-click="home.tabSelect(tab.bat)">

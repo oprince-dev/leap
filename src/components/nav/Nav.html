@@ -1,14 +1,14 @@
 <nav class="navbar" ng-controller="NavCtrl as nav">
   <div class="navbar-content">
     <div class="logoWrap">
-      <img src="/src/img/leap.svg" class="navbar-logo" ng-click="nav.navigate('land'); nav.dropdownToggle = false"></img>
+      <img src="/src/assets/img/leap.svg" class="navbar-logo" ng-click="nav.navigate('land'); nav.dropdownToggle = false"></img>
     </div>
     <div class="navbar-links">
       <ul>
-        <li ng-click="nav.navigate('auth')">
+        <li ng-click="nav.navigate('auth')" ng-show="nav.state">
           {{nav.login}}
         </li>
-        <li ng-click="nav.logUserOut();">
+        <li ng-click="nav.logoutUser()" ng-show="!nav.state">
           {{nav.logout}}
         </li>
         <li>
