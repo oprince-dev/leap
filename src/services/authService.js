@@ -19,6 +19,7 @@
     };
 
     this.loginUser = function(email, password) {
+      console.log('running');
       return firebase.auth().signInWithEmailAndPassword(email, password)
       .then(function(user) {
         if (user !== null) {

@@ -1,9 +1,14 @@
 (function() {
   'use strict';
-
+  console.log('running nav');
   angular.module('leap')
     .controller('NavCtrl', function($rootScope, $scope, $location, authService, authCheck) {
     //// Vars
+      $scope.$on('$locationChangeSuccess', function() {
+        console.log('running check==========================');
+        console.log($location.path());
+        nav.loginSwitchCheck();
+      });
       const nav = this;
       nav.logo = "leap";
       nav.logout = "Logout";
@@ -14,6 +19,14 @@
         {route: 'auth', name: 'Auth'}
       ];
     //// Functions
+      nav.loginSwitchCheck = function() {
+        if($location.path() == '/auth' && '/') {
+          return true;
+        } else {
+          return false;
+        }
+      };
+
       nav.navigate = function(route) {
         if (route == 'land') {
           $location.path('/');
@@ -27,8 +40,6 @@
       };
       nav.logoutUser = function() {
         authService.logoutUser();
-        console.log('logging out');
       };
-      console.log($rootScope);
     });
 }());

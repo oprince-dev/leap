@@ -18,6 +18,7 @@
         let createEmail = this.email;
         let createPassword = this.password;
         authService.createUser(createUsername, createEmail, createPassword).then(function(user){
+          console.log('create pass');
           authService.setUserData(user, createUsername, createEmail);
         });
       };
@@ -25,7 +26,9 @@
       auth.callLoginUser = function() {
         let loginEmail = this.email;
         let loginPassword = this.password;
-        authService.loginUser(loginEmail, loginPassword);
+        authService.loginUser(loginEmail, loginPassword).then(function() {
+          console.log('log pass');
+        });
       };
     });
 }());

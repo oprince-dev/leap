@@ -5,10 +5,10 @@
     </div>
     <div class="navbar-links">
       <ul>
-        <li ng-click="nav.navigate('auth')" ng-show="nav.state">
+        <li ng-click="nav.navigate('auth')" ng-show="nav.loginSwitchCheck()">
           {{nav.login}}
         </li>
-        <li ng-click="nav.logoutUser()" ng-show="!nav.state">
+        <li ng-click="nav.logoutUser()" ng-show="!nav.loginSwitchCheck()">
           {{nav.logout}}
         </li>
         <li>

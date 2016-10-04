@@ -2,12 +2,12 @@
   'use strict';
 
   angular.module('leap')
-    .controller('SideNavCtrl', function($scope, $location) {
+    .controller('SideNavCtrl', function($scope, $location, userObject) {
     //// Vars
       const sidenav = this;
       const user = firebase.auth().currentUser;
       const uid = user.uid;
-      $scope.userEmail = user.email;
+      sidenav.userDB = userObject.getUser();
 
     //// Functions
       $scope.navigate = function(page) {

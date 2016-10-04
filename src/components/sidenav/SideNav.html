@@ -1,9 +1,9 @@
-<div class="sideNav" ng-controller="SideNavCtrl">
+<div class="sideNav" ng-controller="SideNavCtrl as sidenav">
   <div class="userInfo row">
     <ul>
       <li ng-click="navigate('home')">
         <i class="fa fa-user fa-lg" aria-hidden="true"></i>
-        <h4>{{userEmail}}</h4>
+        <h4>{{sidenav.userDB.username}}</h4>
       </li>
     </ul>
   </div>

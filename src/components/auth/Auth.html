@@ -7,24 +7,24 @@
       <div id="register-wrap" ng-show="!authSwitch">
         <input class="input-field" placeholder="username" type="username" ng-model="auth.username">
         <input class="input-field" placeholder="email" type="email" ng-model="auth.email">
-        <input class="input-field" placeholder="password" type="password" ng-model="auth.password">
+        <input class="input-field" placeholder="password" type="password" ng-model="auth.password" ng-enter="auth.callCreateUser()">
         <div class="authSwitch-row">
           <p>Already have an account?</p>
           <a ng-click="authSwitch = !authSwitch">Login</a>
         </div>
-        <input class="signUpCTA" value="{{auth.create}}" type="submit" ng-keypress="auth.callCreateUser()">
+        <input class="signUpCTA" value="{{auth.create}}" type="submit" ng-click="auth.callCreateUser()">
     </form>
       <p>{{auth.errorMessage}}</p>
     </div>
-    <div id="login-wrap" ng-show="authSwitch">
+    <div id="login-wrap" ng-show="authSwitch";
       <form ng-submit="auth.callLoginUser()">
         <input class="input-field" placeholder="email" type="email" ng-model="auth.email">
-        <input class="input-field" placeholder="password" type="password" ng-model="auth.password">
+        <input class="input-field" placeholder="password" type="password" ng-model="auth.password" ng-enter="auth.callLoginUser()">
         <div class="authSwitch-row">
           <p>Don't have an account yet?</p>
           <a ng-click="authSwitch = !authSwitch">Register</a>
         </div>
-        <input class="signUpCTA" value="{{auth.login}}" type="submit" ng-keypress="auth.callLoginUser()">
+        <input class="signUpCTA" value="{{auth.login}}" type="submit" ng-click="auth.callLoginUser()">
       </form>
     </div>
   </div>

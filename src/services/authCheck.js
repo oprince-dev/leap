@@ -8,9 +8,8 @@
       var user = firebase.auth().currentUser;
       if (user === null) {
         $location.path('/auth');
-        return user;
+        return false;
       } else {
-        console.log('logged in');
         return true;
       }
     };

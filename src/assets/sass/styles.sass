@@ -1,12 +1,15 @@
 @import "compass"
 @import "base"
 
+*
+  box-sizing: initial !important
+
 html
   position: relative
   width: 100%
   overflow-x: hidden
   background-color: $OffWhite
-  -webkit-font-smoothing: antialiased
+
 body
   display: flex
   flex-direction: column
@@ -20,6 +23,7 @@ html, body, .app
 
 .auth-page, .home-page, .settings-page
   background-color: $SecondaryColor
+
 
 
 //////////////////////////////////////////////////////////////////Navbar Styling
@@ -65,10 +69,10 @@ html, body, .app
           display: inline
           vertical-align: middle
           margin-right: 20px
-          &.is-active
-            color: pink
+
 .dropdown
   position: absolute
+  top: 51px
   width: 100px
   right: 0px
   margin: 0
@@ -216,7 +220,9 @@ html, body, .app
   display: flex
   flex-direction: column
   .auth
+    position: relative
     width: 500px
+    height: 450px
     margin: 100px auto
     // transform: translateY(-30%)
     text-align: center
@@ -250,6 +256,10 @@ html, body, .app
       font: $Roboto
       font-weight: 100
       color: white
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 32%
       display: inline-flex
       p
         padding-right: 10px
@@ -263,6 +273,10 @@ html, body, .app
           color: rgba($PrimaryColor, 0.5)
     .signUpCTA
       margin-top: 40px
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
 //////////////////////////////////////////////////////////////////SideNav Styling
 .sideNav
   float: left
@@ -423,6 +437,12 @@ html, body, .app
     background-color: $TertiaryColor
     width: 1000px
     margin: 0 auto
+    color: white
+    form
+      margin: 100px
+      input
+        color: $TertiaryColor
+
 //////////////////////////////////////////////////////////////////Stats Page Styling
 .stats-page
   .stats-wrap

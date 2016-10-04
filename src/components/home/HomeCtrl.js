@@ -1,14 +1,12 @@
 (function() {
   'use strict';
-  
+
   angular.module('leap')
-    .controller('HomeCtrl', function($route, $location) {
-      const user = firebase.auth().currentUser;
+    .controller('HomeCtrl', function($scope, $route, $location, userObject) {
     //// Vars
       const home = this;
-      const uid = user.uid;
-      home.userEmail = user.email;
-      home.username = user.displayName;
+      home.userDB = userObject.getUser();
+
       home.active = $location.path();
       home.showNav = true;
       home.tab = 'day';
