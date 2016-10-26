@@ -6,20 +6,25 @@
       const task = this;
       const user = firebase.auth().currentUser;
       const uid = user.uid;
-      // task.userDB = userObject.getUser();
-      task.active = $location.path();
+      $scope.active = $location.path();
       task.showNav = true;
-      console.log(task.showNav);
 
-      $scope.addTask = function(task) {
-        var pushTask = $scope.task;
-        console.log(pushTask);
-        var tasksRef = firebase.database().ref('users/' + uid + '/tasks');
-        tasksRef.push(pushTask);
+      var taskKey   =   firebase.database().ref('users/' + uid + '/tasks').push().key;
+      var tasksRef  =   firebase.database().ref('users/' + uid + '/tasks/' + taskKey);
+      var pullRef   =   firebase.database().ref('users/' + uid + '/tasks');
+
+      $scope.pullTasks = $firebaseArray(pullRef);
+      console.log($scope.pullTasks);
+
+      task.addTask  =   function() {
+        let taskTitle  =  task.task;
+        let taskDateTime = task.taskDateTime;
+
+        tasksRef.set({
+          taskTitle: taskTitle.toString(),
+          taskDateTime: taskDateTime.toString()
+        });
       };
 
-      var tasksRef = firebase.database().ref('users/' + uid + '/tasks');
-      $scope.pullTasks  = $firebaseArray(tasksRef);
-      console.log($scope.pullTasks);
     });
 }());

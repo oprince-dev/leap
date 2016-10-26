@@ -1,0 +1,54 @@
+.auth-page
+  width: 100%
+  min-height: calc(100vh - 295px)
+  display: flex
+  flex-direction: column
+  .auth
+    width: 500px
+    margin: 100px auto
+    // transform: translateY(-30%)
+    text-align: center
+    animation: FadeIn 500ms ease
+    +selectNone
+    h1
+      font-style: bold
+      font-size: 65px
+      color: white
+      display: block
+      margin-bottom: 0
+    h3
+      font-size: 30px
+      font-style: italic
+      font-weight: 100
+      color: $PrimaryColor
+      margin: 0 0 20px 0
+      padding-left: 100px
+
+    .input-field
+      +input-field
+      display: flex
+      flex-direction: column
+      margin: 10px auto
+      width: 60%
+
+    .authSwitch-row
+      font: $Roboto
+      font-weight: 100
+      color: white
+      display: inline-flex
+      p
+        padding-right: 10px
+      a
+        color: $PrimaryColor
+        font-style: italic
+        font-weight: 700
+        cursor: pointer
+        text-decoration: none
+        &:hover
+          color: rgba($PrimaryColor, 0.5)
+    .leap-button
+      +normalize-links
+      +leap-button
+      width: 125px !important
+      padding: 10px 25px !important
+      height: auto

@@ -1,0 +1,29 @@
+@keyframes LandSlide
+  0%
+    transform: translate3d(-2000px, 0px, 0px)
+    opacity: 1
+  100%
+    transform: translate3d(0px, 0px, 0px)
+    opacity: 1
+@keyframes FadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes dropSlidein
+  0%
+    transform: translate3d(0, 0, 0)
+  100%
+    transform: translate3d(100px, 0, 0)
+@keyframes dropSlideOut
+  0%
+    transform: translate3d(100px, 0, 0)
+  100%
+    transform: translate3d(0, 0, 0)
+
+@media (max-width : 1525px)
+  .land-content
+    display: block
+    position: relative
+  #laptopmock
+    width: 750px

@@ -1,0 +1,78 @@
+.home-page
+  .home-wrap
+    +pageShadow
+    background-color: $TertiaryColor
+    width: 1000px
+    margin: 0 auto
+    .user-wrap
+      margin: 50px 0 0 0
+      .userProfPic
+        margin: 0 auto
+        width: 150px
+        height: 150px
+        background-color: white
+        border-radius: 50%
+      .username
+        text-align: center
+    .userDisplay-wrap
+      display: inline-flex
+      width: 100%
+      margin-top: 30px
+      .recent-activity, .starred
+        width: 50%
+        height: 400px
+        margin: 0 30px
+      .recent-activity
+        table
+          width: 100%
+          th
+            width: 70%
+            text-align: left
+            font-size: 20px
+            padding-bottom: 10px
+            border-bottom: 1px solid rgba($QuaternaryColor, 0.5) !important
+          tbody
+            td
+              padding: 10px 0
+              border-bottom: 1px solid rgba($QuaternaryColor, 0.5) !important
+            td:nth-child(2)
+              width: 30%
+              padding-right: 0px
+              color: rgba(white, 0.5)
+              font-style: italic
+      .starred
+        h3
+          height: 28px
+          line-height: 28px
+          vertical-align: middle
+          padding-bottom: 10px
+          margin: 0
+          font-size: 20px
+        .nav
+          border: none
+          height: 30px
+          // border-bottom: 1px solid rgba($QuaternaryColor, 0.5) !important
+          li a
+            border: none
+            color: white
+            margin-right: 4px
+            padding: 5px 20px !important
+          li a:visited
+            background-color: $PrimaryColor !important
+            border: none
+          li a:hover
+            background-color: $PrimaryColor !important
+            border: none
+          li.active a
+            border: none
+            background-color: none
+          li a:focus
+            background-color: $TertiaryColor
+            border: none
+        .starred-items
+          background-color: $SecondaryColor
+          height: 300px
+          h5
+            padding: 10px 0 0 10px
+            margin: 0
+            font-weight: 100

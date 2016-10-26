@@ -1,0 +1,61 @@
+.calendar-page
+  .calendar-wrap
+    background-color: $TertiaryColor
+    margin: 75px auto
+    width: 1000px
+    height: 700px
+    +pageShadow
+    .content
+      height: 100%
+      .calendar
+        display: inline-block
+        width: 80%
+        height: 100%
+        +selectNone
+        .header
+          text-align: center
+          .month, .year
+            display: inline-block
+            font-size: 50px
+            margin: 10px 5px
+          .year
+            font-weight: 100
+            font-style: italic
+          i
+            transform: translateY(-10px)
+            margin: 30px
+            color: $PrimaryColor
+            cursor: pointer
+        .days, .dates
+          width: 100%
+          display: flex
+          justify-content: space-around
+          .tile
+            text-align: center
+            min-width: 100px
+          h4
+            display: inline-block
+            cursor: pointer
+        .dates
+          h1
+            font-size: 50px
+            font-weight: 100
+            margin: 10px 0
+            cursor: pointer
+          .tile:hover
+            background-color: rgba($SecondaryColor, 0.5)
+            transition: 300ms ease-in
+          .dateFade
+            color: $SecondaryColor
+            font-style: italic
+      .dailies
+        text-align: center
+        background-color: rgba(0,0,0,0.4)
+        height: 100%
+        width: 20%
+        float: right
+      .days-wrap
+        display: flex
+        flex-wrap: wrap
+        align-content: space-around
+        height: calc(623px)

@@ -12,7 +12,7 @@
           <p>Already have an account?</p>
           <a ng-click="authSwitch = !authSwitch">Login</a>
         </div>
-        <input class="signUpCTA" value="{{auth.create}}" type="submit" ng-click="auth.callCreateUser()">
+        <input class="leap-button" value="{{auth.create}}" type="submit" ng-click="auth.callCreateUser()">
     </form>
       <p>{{auth.errorMessage}}</p>
     </div>
@@ -24,7 +24,7 @@
           <p>Don't have an account yet?</p>
           <a ng-click="authSwitch = !authSwitch">Register</a>
         </div>
-        <input class="signUpCTA" value="{{auth.login}}" type="submit" ng-click="auth.callLoginUser()">
+        <input class="leap-button" value="{{auth.login}}" type="submit" ng-click="auth.callLoginUser()">
       </form>
     </div>
   </div>

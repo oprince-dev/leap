@@ -1,0 +1,32 @@
+.tasks-page
+  .tasks-wrap
+    +pageShadow
+    background-color: $TertiaryColor
+    width: 1000px
+    margin: 0 auto
+    .content
+      margin: 50px 30px
+
+      .task-input-row, .date-time-row
+        margin-bottom: 10px
+        input
+          +input-field
+
+      .task-input-row
+        #task-input
+          width: 50%
+
+      .date-time-row
+        #task-date, #task-time
+          margin-right: 5px
+        #task-date
+          width: 20% !important
+        #task-time
+          width: 15% !important
+
+      .leap-button
+        +leap-button
+        width: 100px
+        font-size: 18px
+        margin: 0 !important
+        height: 40px !important

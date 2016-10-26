@@ -1,12 +1,9 @@
 (function() {
   'use strict';
-  console.log('running nav');
   angular.module('leap')
     .controller('NavCtrl', function($rootScope, $scope, $location, authService, authCheck) {
     //// Vars
       $scope.$on('$locationChangeSuccess', function() {
-        console.log('running check==========================');
-        console.log($location.path());
         nav.loginSwitchCheck();
       });
       const nav = this;
