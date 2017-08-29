@@ -5,11 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "angular": "~1.5.8",
-    "angular-route": "~1.5.8",
     "angular-animate": "~1.5.8",
     "angular-cookies": "~1.5.8",
+    "angular-route": "~1.5.8",
     "angular-ui-bootstrap": "~2.1.2",
+    "angularFire": "^2.3.0",
     "bootstrap": "~3.3.7",
+    "font-awesome": "^4.7.0",
     "jquery": "~3.1.0",
     "normalize.css": "~4.2.0",
     "sass": "~0.5.0"
