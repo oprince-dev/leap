@@ -4,11 +4,12 @@
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyAfNApnwslXqg24PzP9AYw2o4rXM49b94k",
-    authDomain: "leap-ad618.firebaseapp.com",
-    databaseURL: "https://leap-ad618.firebaseio.com",
-    storageBucket: "leap-ad618.appspot.com",
-    messagingSenderId: "79536860504"
+    apiKey: "AIzaSyATa0bYrcs26oXKoKcZgrx23-K4nm6kFCw",
+    authDomain: "leap-7af11.firebaseapp.com",
+    databaseURL: "https://leap-7af11.firebaseio.com",
+    projectId: "leap-7af11",
+    storageBucket: "",
+    messagingSenderId: "860137278240"
   };
   firebase.initializeApp(config);
 }());
