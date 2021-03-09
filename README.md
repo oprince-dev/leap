@@ -4,7 +4,7 @@
 
 #Getting Started
 ```
-git clone https://github.com/oprince-dev/leap.git
+git clone https://github.com/oprince-tech/leap.git
 cd leap
 npm install
 python -m SimpleHTTPServer
